@@ -58,6 +58,15 @@ namespace ConfirmationDialogs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Type "{0}" to continue.
+        /// </summary>
+        internal static string WhatToWrite {
+            get {
+                return ResourceManager.GetString("WhatToWrite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CONFIRM.
         /// </summary>
         internal static string DefaultConfirm {

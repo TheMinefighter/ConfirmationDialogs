@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ConfirmationDialogs
@@ -12,6 +13,7 @@ namespace ConfirmationDialogs
 		{
 			Tag = tag;
 			DescriptionTb.Text = tag.Text;
+			WhatToWriteTb.Text = string.Format("Lol {0} df", tag.Confirmation);
 		}
 
 

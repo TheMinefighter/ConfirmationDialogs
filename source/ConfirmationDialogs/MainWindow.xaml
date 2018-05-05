@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         d:DesignHeight="156.276" d:DesignWidth="329.288">
    <Grid>
-      <TextBlock HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="301">
+      <TextBlock x:Name="WhatToWriteTb" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="301">
          <Run Text="TextBlock" />
       </TextBlock>
       <TextBox x:Name="DescriptionTb" HorizontalAlignment="Left" Height="37" Margin="7,10,0,0" TextWrapping="Wrap"

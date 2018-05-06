@@ -2,7 +2,7 @@
 
 
 namespace Tests {
-	//Test
+	//Test2
 	internal class Program {
 		[STAThread]
 		public static void Main(string[] args) {

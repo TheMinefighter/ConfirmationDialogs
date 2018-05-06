@@ -120,10 +120,16 @@
   <data name="WhatToWrite" xml:space="preserve">
     <value>Type "{0}" to continue</value>
   </data>
-  <data name="DefaultConfirm" xml:space="preserve">
+  <data name="DefaultConfirmationText" xml:space="preserve">
     <value>CONFIRM</value>
   </data>
   <data name="DefaultText" xml:space="preserve">
     <value>The following action might be bad. Continue only if you know what you are doing!</value>
+  </data>
+  <data name="DefaultCancelButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="DefaultContinueButton" xml:space="preserve">
+    <value>Continue</value>
   </data>
 </root>

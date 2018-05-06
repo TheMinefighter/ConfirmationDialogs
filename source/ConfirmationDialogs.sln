@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfirmationDialogs", "ConfirmationDialogs\ConfirmationDialogs.csproj", "{EADA1912-139B-45D0-8218-E0473753A9E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{CA1C15F5-7CC5-4132-B8F5-0F6BEBED8B10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{EADA1912-139B-45D0-8218-E0473753A9E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EADA1912-139B-45D0-8218-E0473753A9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EADA1912-139B-45D0-8218-E0473753A9E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA1C15F5-7CC5-4132-B8F5-0F6BEBED8B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1C15F5-7CC5-4132-B8F5-0F6BEBED8B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1C15F5-7CC5-4132-B8F5-0F6BEBED8B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1C15F5-7CC5-4132-B8F5-0F6BEBED8B10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

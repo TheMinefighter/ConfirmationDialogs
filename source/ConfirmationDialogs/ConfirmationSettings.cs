@@ -4,10 +4,14 @@ namespace ConfirmationDialogs
 {
   public static class ConfirmationSettings
    {
-		public static bool Skip
-		{
-			set => Confirmation.Skip = value;
-		}
+	   public static bool Skip
+	   {
+		   set => Confirmation.Skip = value;
+	   }
+	   public static bool AllowSkip
+	   {
+		   set => Confirmation.AllowSkip = value;
+	   }
 	   public static ModifierRequirement Alt
 	   {
 		   set => Confirmation.Requirements[ModifierKeys.Alt] = value;

@@ -4,6 +4,7 @@ namespace ConfirmationDialogs
 {
   public static class ConfirmationSettings
    {
+	   
 	   public static bool Skip
 	   {
 		   set => Confirmation.Skip = value;

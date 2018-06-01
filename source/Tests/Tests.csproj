@@ -42,10 +42,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConfirmationDialogs\ConfirmationDialogs.csproj">
-      <Project>{eada1912-139b-45d0-8218-e0473753a9e8}</Project>
-      <Name>ConfirmationDialogs</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

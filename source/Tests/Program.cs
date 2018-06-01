@@ -1,8 +1,8 @@
 ﻿using System;
+using ConfirmationDialogs;
 
 
 namespace Tests {
-	//Test3
 	internal class Program {
 		[STAThread]
 		public static void Main(string[] args) {

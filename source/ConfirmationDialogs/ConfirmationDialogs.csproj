@@ -51,9 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Confirmation.cs" />
-    <Compile Include="ConfirmationSetting.cs" />
+    <Compile Include="SkipConfirmationSetting.cs" />
     <Compile Include="ConfirmationSettings.cs" />
-    <Compile Include="ConfirmationSettingsPresets.cs" />
+    <Compile Include="SkipConfirmationPresets.cs" />
     <Compile Include="ConfirmationStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -19,25 +19,21 @@ namespace ConfirmationDialogs
    /// </summary>
    public partial class FastConfirmationWindow : Window
    {
-      public FastConfirmationWindow()
-      {
-         InitializeComponent();
-      }
-
-	   private void ConfirmBtn_OnClick(object sender, RoutedEventArgs e)
+	   internal FastConfirmationWindow(ConfirmationTag tag)
 	   {
-		   if (ConfirmationBoxTb.Text == ((ConfirmationTag)Tag).Confirmation)
-		   {
+		   InitializeComponent();
+		   Tag = tag;
+	   }
+
+      private void ConfirmBtn_OnClick(object sender, RoutedEventArgs e)
+	   {
+
 			   ((ConfirmationTag)Tag).Confirmed = true;
 			   Close();
-		   }
+		   
 	   }
-
-	   private void ConfirmationBoxTb_OnTextChanged(object sender, TextChangedEventArgs e)
-	   {
-		   ConfirmBtn.IsEnabled = ConfirmationBoxTb.Text == ((ConfirmationTag)Tag).Confirmation;
-
-	   }
+		
+	   
 
 	   private void CancelBtn_OnClick(object sender, RoutedEventArgs e)
 	   {
@@ -51,9 +47,6 @@ namespace ConfirmationDialogs
 		   CancelBtn.Content = confirmationTag.CancelButton;
 		   ConfirmBtn.Content = confirmationTag.ContinueButton;
 		   DescriptionTb.Text = confirmationTag.Text;
-		   WhatToWriteTb.Text = string.Format(ConfirmationStrings.WhatToWrite, confirmationTag.Confirmation);
-		   ConfirmationBoxTb.TextChanged += ConfirmationBoxTb_OnTextChanged;
 	   }
    }
-}
 }

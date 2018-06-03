@@ -54,7 +54,7 @@
     <Compile Include="FastConfirmationWindow.xaml.cs">
       <DependentUpon>FastConfirmationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SkipConfirmationSetting.cs" />
+    <Compile Include="ConfirmationConfiguration.cs" />
     <Compile Include="ConfirmationSettings.cs" />
     <Compile Include="ConfirmationStrings.Designer.cs">
       <AutoGen>True</AutoGen>

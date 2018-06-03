@@ -8,7 +8,7 @@ namespace ConfirmationDialogs
    public static class Confirmation
    {
 
-      internal static bool ShouldSkip(SkipConfirmationSetting stg)
+      internal static bool ShouldSkip(ConfirmationConfiguration stg)
       {
          if (stg.SkipAlways)
          {
@@ -56,28 +56,32 @@ namespace ConfirmationDialogs
          return true;
       }
 
-      internal static SkipConfirmationSetting _setting;
+      internal static ConfirmationConfiguration _configuration;
 
 
 
-      /// <summary>
-      /// Starts a confirmation dialog
-      /// </summary>
-      /// <param name="text">The warning text to Display, null for default</param>
-      /// <param name="confirmationText">The text the user has to type to confirm the Action, null for default</param>
-      /// <param name="continueBtn">The text to display on the continue button, null for default</param>
-      /// <param name="cancleBtn">The text to display on the cancel button, null for default</param>
-      /// <param name="requirements">Overrides the default skip requiremnts</param>
-      /// <returns>Whether the user confirmed the action</returns>
-      public static bool Confirm(string text = null, string confirmationText = null, string continueBtn = null, string cancleBtn = null)
-      {
-         if (ShouldSkip())
-         {
-            return true;
-         }
+	   /// <summary>
+	   /// Starts a confirmation dialog
+	   /// </summary>
+	   /// <param name="text">The warning text to Display, null for default</param>
+	   /// <param name="confirmationText">The text the user has to type to confirm the Action, null for default</param>
+	   /// <param name="continueBtn">The text to display on the continue button, null for default</param>
+	   /// <param name="cancleBtn">The text to display on the cancel button, null for default</param>
+	   /// <param name="fast"></param>
+	   /// <param name="allowSkip"></param>
+	   /// <param name="configurationOverride"></param>
+	   /// <returns>Whether the user confirmed the action</returns>
+	   public static bool Confirm(string text = null, string confirmationText = null, string continueBtn = null,
+		   string cancleBtn = null, bool? fast = null, bool? allowSkip = null, ConfirmationConfiguration configurationOverride = null)
+	   {
+		   ConfirmationConfiguration localConfiguration = configurationOverride ?? _configuration;
+		   if (ShouldSkip((ConfirmationConfiguration) _configuration.Clone()))
+		   {
+			   return true;
+		   }
 
-         return ConfirmWindow(text, confirmationText, cancleBtn, continueBtn);
-      }
+		   return ConfirmWindow(text, confirmationText, cancleBtn, continueBtn, fast);
+	   }
 
       /// <summary>
       /// Runs the internal confirmation dialog
@@ -89,10 +93,20 @@ namespace ConfirmationDialogs
       /// <returns></returns>
       internal static bool ConfirmWindow(string text, string confirmationText, string continueBtn, string cancelBtn, bool fast = false)
       {
-         ConfirmationWindow window = new ConfirmationWindow(new ConfirmationTag(text,
-            confirmationText, continueBtn, cancelBtn));
-         window.ShowDialog();
-         return window.Tag is ConfirmationTag b && b.Confirmed;
+	      if (!fast)
+	      {
+		      ConfirmationWindow window = new ConfirmationWindow(new ConfirmationTag(text,
+			      confirmationText, continueBtn, cancelBtn));
+		      window.ShowDialog();
+		      return window.Tag is ConfirmationTag b && b.Confirmed;
+	      }
+	      else
+	      {
+		      FastConfirmationWindow window = new FastConfirmationWindow(new ConfirmationTag(text,
+			      confirmationText, continueBtn, cancelBtn));
+		      window.ShowDialog();
+		      return window.Tag is ConfirmationTag b && b.Confirmed;
+         }
       }
    }
 }

@@ -51,6 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Confirmation.cs" />
+    <Compile Include="FastConfirmationWindow.xaml.cs">
+      <DependentUpon>FastConfirmationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SkipConfirmationSetting.cs" />
     <Compile Include="ConfirmationSettings.cs" />
     <Compile Include="ConfirmationStrings.Designer.cs">
@@ -59,8 +62,8 @@
       <DependentUpon>ConfirmationStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="ConfirmationTag.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="ConfirmationWindow.cs">
+      <DependentUpon>ConfirmationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ModifierRequirement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,7 +76,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MainWindow.xaml">
+    <Page Include="ConfirmationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FastConfirmationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

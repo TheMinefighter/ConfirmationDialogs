@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Confirmation.cs" />
+    <Compile Include="ConfirmationWindowConfiguration.cs" />
     <Compile Include="FastConfirmationWindow.xaml.cs">
       <DependentUpon>FastConfirmationWindow.xaml</DependentUpon>
     </Compile>

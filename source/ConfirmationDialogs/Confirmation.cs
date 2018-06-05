@@ -74,6 +74,11 @@ namespace ConfirmationDialogs
 	   public static bool Confirm(string text = null, string confirmationText = null, string continueBtn = null,
 		   string cancleBtn = null, bool? fast = null, bool? allowSkip = null, ConfirmationConfiguration configurationOverride = null)
 	   {
+		   if (configurationOverride == null)
+		   {
+			   throw new ArgumentNullException(nameof(configurationOverride));
+		   }
+
 		   ConfirmationConfiguration localConfiguration = configurationOverride ?? _configuration;
 		   if (ShouldSkip((ConfirmationConfiguration) _configuration.Clone()))
 		   {

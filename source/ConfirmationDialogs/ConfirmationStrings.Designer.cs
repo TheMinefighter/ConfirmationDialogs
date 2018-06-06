@@ -19,7 +19,7 @@ namespace ConfirmationDialogs {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class ConfirmationStrings {
@@ -90,9 +90,18 @@ namespace ConfirmationDialogs {
         /// <summary>
         ///   Looks up a localized string similar to The following action might be bad. Continue only if you know what you are doing!.
         /// </summary>
-        internal static string DefaultText {
+        internal static string DefaultDescriptionText {
             get {
-                return ResourceManager.GetString("DefaultText", resourceCulture);
+                return ResourceManager.GetString("DefaultDescriptionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        internal static string DefaultTitle {
+            get {
+                return ResourceManager.GetString("DefaultTitle", resourceCulture);
             }
         }
         

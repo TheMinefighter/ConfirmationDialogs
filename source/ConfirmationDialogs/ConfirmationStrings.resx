@@ -119,7 +119,7 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 		</value>
 	</resheader>
-	<data name="WhatToWrite" xml:space="preserve">
+	<data name="WriteInstructions" xml:space="preserve">
     <value>Type "{0}" to continue</value>
   </data>
   <data name="DefaultConfirmationText" xml:space="preserve">
@@ -131,7 +131,7 @@
   <data name="DefaultCancelButton" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="DefaultContinueButton" xml:space="preserve">
+  <data name="DefaultContinueButtonText" xml:space="preserve">
     <value>Continue</value>
   </data>
     <data name="DefaultTitle" xml:space="preserve">

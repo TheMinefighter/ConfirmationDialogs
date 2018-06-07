@@ -3,9 +3,10 @@ using System.Windows.Input;
 
 namespace ConfirmationDialogs {
 	public static class Confirmation {
-		internal static ConfirmationConfiguration _configuration;
+		internal static SkipConfirmationConfiguration SkipConfiguration;
+		internal static ConfirmationWindowConfiguration WindowConfiguration;
 
-		internal static bool ShouldSkip(ConfirmationConfiguration stg) {
+		internal static bool ShouldSkip(SkipConfirmationConfiguration stg) {
 			if (stg.SkipAlways) {
 				return true;
 			}
@@ -58,40 +59,40 @@ namespace ConfirmationDialogs {
 		/// <param name="configurationOverride"></param>
 		/// <returns>Whether the user confirmed the action</returns>
 		public static bool Confirm(string text = null, string confirmationText = null, string continueBtn = null,
-			string cancleBtn = null, bool? fast = null, bool? allowSkip = null, ConfirmationConfiguration configurationOverride = null) {
+			string cancleBtn = null, bool? fast = null, bool? allowSkip = null, SkipConfirmationConfiguration configurationOverride = null) {
 			if (configurationOverride == null) {
 				throw new ArgumentNullException(nameof(configurationOverride));
 			}
 
-			ConfirmationConfiguration localConfiguration = configurationOverride ?? _configuration;
-			if (ShouldSkip((ConfirmationConfiguration) _configuration.Clone())) {
+			SkipConfirmationConfiguration localConfiguration = configurationOverride ?? SkipConfiguration;
+			if (ShouldSkip((SkipConfirmationConfiguration) SkipConfiguration.Clone())) {
 				return true;
 			}
 
 			return ConfirmWindow(text, confirmationText, cancleBtn, continueBtn, fast);
 		}
 
-		/// <summary>
-		///  Runs the internal confirmation dialog
-		/// </summary>
-		/// <param name="text">The text to display</param>
-		/// <param name="confirmationText">The text the user has to type to confirm the Action</param>
-		/// <param name="continueBtn"></param>
-		/// <param name="cancelBtn"></param>
-		/// <returns></returns>
-		internal static bool ConfirmWindow(string text, string confirmationText, string continueBtn, string cancelBtn, bool fast = false) {
-			if (!fast) {
-				ConfirmationWindow window = new ConfirmationWindow(new ConfirmationTag(text,
-					confirmationText, continueBtn, cancelBtn));
-				window.ShowDialog();
-				return window.Tag is ConfirmationTag b && b.Confirmed;
-			}
-			else {
-				FastConfirmationWindow window = new FastConfirmationWindow(new ConfirmationTag(text,
-					confirmationText, continueBtn, cancelBtn));
-				window.ShowDialog();
-				return window.Tag is ConfirmationTag b && b.Confirmed;
-			}
-		}
+//		/// <summary>
+//		///  Runs the internal confirmation dialog
+//		/// </summary>
+//		/// <param name="text">The text to display</param>
+//		/// <param name="confirmationText">The text the user has to type to confirm the Action</param>
+//		/// <param name="continueBtn"></param>
+//		/// <param name="cancelBtn"></param>
+//		/// <returns></returns>
+//		internal static bool ConfirmWindow(string text, string confirmationText, string continueBtn, string cancelBtn, bool fast = false) {
+//			if (!fast) {
+//				ConfirmationWindow window = new ConfirmationWindow(new ConfirmationTag(text,
+//					confirmationText, continueBtn, cancelBtn));
+//				window.ShowDialog();
+//				return window.Tag is ConfirmationTag b && b.Confirmed;
+//			}
+//			else {
+//				FastConfirmationWindow window = new FastConfirmationWindow(new ConfirmationTag(text,
+//					confirmationText, continueBtn, cancelBtn));
+//				window.ShowDialog();
+//				return window.Tag is ConfirmationTag b && b.Confirmed;
+//			}
+//		}
 	}
 }

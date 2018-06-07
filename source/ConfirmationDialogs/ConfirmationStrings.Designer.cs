@@ -81,9 +81,9 @@ namespace ConfirmationDialogs {
         /// <summary>
         ///   Looks up a localized string similar to Continue.
         /// </summary>
-        internal static string DefaultContinueButton {
+        internal static string DefaultContinueButtonText {
             get {
-                return ResourceManager.GetString("DefaultContinueButton", resourceCulture);
+                return ResourceManager.GetString("DefaultContinueButtonText", resourceCulture);
             }
         }
         
@@ -108,9 +108,9 @@ namespace ConfirmationDialogs {
         /// <summary>
         ///   Looks up a localized string similar to Type &quot;{0}&quot; to continue.
         /// </summary>
-        internal static string WhatToWrite {
+        internal static string WriteInstructions {
             get {
-                return ResourceManager.GetString("WhatToWrite", resourceCulture);
+                return ResourceManager.GetString("WriteInstructions", resourceCulture);
             }
         }
     }

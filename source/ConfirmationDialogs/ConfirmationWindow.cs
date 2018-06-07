@@ -33,7 +33,7 @@ namespace ConfirmationDialogs {
 			CancelBtn.Content = confirmationTag.CancelButton;
 			ConfirmBtn.Content = confirmationTag.ContinueButton;
 			DescriptionTb.Text = confirmationTag.DescriptionText;
-			WhatToWriteTb.Text = string.Format(ConfirmationStrings.WhatToWrite, confirmationTag.Confirmation);
+			WhatToWriteTb.Text = string.Format(ConfirmationStrings.WriteInstructions, confirmationTag.Confirmation);
 			ConfirmationBoxTb.TextChanged += ConfirmationBoxTb_OnTextChanged;
 			if (confirmationTag.Icon != null) {
 				Icon = confirmationTag.Icon;

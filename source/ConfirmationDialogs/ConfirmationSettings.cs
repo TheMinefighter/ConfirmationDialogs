@@ -1,5 +1,7 @@
-﻿using System.Windows.Media;
+﻿using System;
+using System.Windows.Media;
 using JetBrains.Annotations;
+using Optional;
 
 namespace ConfirmationDialogs {
 	public static class ConfirmationSettings {
@@ -78,11 +80,20 @@ namespace ConfirmationDialogs {
 
 		public static void SetDefaultWindowConfiguration(bool? fast = null, string title = null, string confirmationText = null,
 			string descriptionText = null,
-			ImageSource icon = null, string confirmButtonText = null, string abortButtonText = null) {
+			Option<ImageSource>  icon = default(Option<ImageSource>), string confirmButtonText = null, string abortButtonText = null) {
 			ConfirmationWindowConfiguration.NormalWindowConfiguration =
 				ConfirmationWindowConfiguration.NormalWindowConfiguration.CreateFromDefaults(fast, title, confirmationText, descriptionText,
 					icon,
 					confirmationText, abortButtonText);
 		}
+		public static void SetDefaultSkipConfiguration(bool? fast = null, string title = null, string confirmationText = null,
+			string descriptionText = null,
+			Option<ImageSource>  icon = default(Option<ImageSource>), string confirmButtonText = null, string abortButtonText = null) {
+			ConfirmationWindowConfiguration.NormalWindowConfiguration =
+				ConfirmationWindowConfiguration.NormalWindowConfiguration.CreateFromDefaults(fast, title, confirmationText, descriptionText,
+					icon,
+					confirmationText, abortButtonText);
+		}
+
 	}
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
+using System.Windows.Media;
+using Optional;
 
 namespace ConfirmationDialogs {
 	public static class Confirmation {
@@ -46,31 +48,33 @@ namespace ConfirmationDialogs {
 			return true;
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="windowOverride"></param>
+		/// <param name="skipOverride"></param>
+		/// <returns></returns>
+		public static bool
+			// ReSharper disable once MethodOverloadWithOptionalParameter
+			Confirm(ConfirmationWindowConfiguration windowOverride = null, SkipConfirmationConfiguration skipOverride = null) =>
+			ShouldSkip(skipOverride ?? SkipConfiguration) || (windowOverride ?? WindowConfiguration).Confirm();
 
 		/// <summary>
 		///  Starts a confirmation dialog
 		/// </summary>
 		/// <param name="text">The warning text to Display, null for default</param>
+		/// <param name="title"></param>
+		/// <param name="fast"></param>
 		/// <param name="confirmationText">The text the user has to type to confirm the Action, null for default</param>
 		/// <param name="continueBtn">The text to display on the continue button, null for default</param>
 		/// <param name="cancleBtn">The text to display on the cancel button, null for default</param>
-		/// <param name="fast"></param>
-		/// <param name="allowSkip"></param>
 		/// <param name="configurationOverride"></param>
 		/// <returns>Whether the user confirmed the action</returns>
-		public static bool Confirm(string text = null, string confirmationText = null, string continueBtn = null,
-			string cancleBtn = null, bool? fast = null, bool? allowSkip = null, SkipConfirmationConfiguration configurationOverride = null) {
-			if (configurationOverride == null) {
-				throw new ArgumentNullException(nameof(configurationOverride));
-			}
-
-			SkipConfirmationConfiguration localConfiguration = configurationOverride ?? SkipConfiguration;
-			if (ShouldSkip((SkipConfirmationConfiguration) SkipConfiguration.Clone())) {
-				return true;
-			}
-
-			return ConfirmWindow(text, confirmationText, cancleBtn, continueBtn, fast);
-		}
+		// ReSharper disable once MethodOverloadWithOptionalParameter
+		public static bool Confirm(string text = null, string title = null, bool? fast = null, string confirmationText = null,
+			string continueBtn = null,
+			string cancleBtn = null) => ShouldSkip(SkipConfiguration) ||
+			                            WindowConfiguration.CreateFromDefaults(text, title, fast, confirmationText, continueBtn, cancleBtn,default(Option<ImageSource>)).Confirm();
 
 //		/// <summary>
 //		///  Runs the internal confirmation dialog
@@ -94,5 +98,6 @@ namespace ConfirmationDialogs {
 //				return window.Tag is ConfirmationTag b && b.Confirmed;
 //			}
 //		}
+		public static bool Confirm() => ShouldSkip(SkipConfiguration) || WindowConfiguration.Confirm();
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using System.Windows.Media;
-using OptionalSharp;
+using Functional.Option;
 
 namespace ConfirmationDialogs {
 	public static class Confirmation {
@@ -71,7 +71,7 @@ namespace ConfirmationDialogs {
 		/// <returns>Whether the user confirmed the action</returns>
 		// ReSharper disable once MethodOverloadWithOptionalParameter
 		public static bool Confirm(string text = null, string title = null, bool? confirmByRetyping = null, string confirmationText = null,
-			string continueBtn = null, string cancleBtn = null,Optional<ImageSource> icon=default(Optional<ImageSource>)) =>
+			string continueBtn = null, string cancleBtn = null, Option<ImageSource> icon = default(Option<ImageSource>)) =>
 			ShouldSkip(SkipConfiguration) ||
 			WindowConfiguration.CreateFromDefaults(text, title, confirmByRetyping, confirmationText, continueBtn, cancleBtn, icon)
 				.Confirm();

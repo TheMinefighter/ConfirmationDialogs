@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OptionalSharp, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\OptionalSharp.0.8.2\lib\net461\OptionalSharp.dll</HintPath>
+    <Reference Include="Option, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Option.3.0.1\lib\Net35\Option.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />

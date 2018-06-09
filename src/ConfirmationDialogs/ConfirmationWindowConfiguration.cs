@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media;
+using Functional.Option;
 using JetBrains.Annotations;
-using OptionalSharp;
 
 namespace ConfirmationDialogs {
 	public class ConfirmationWindowConfiguration {
@@ -20,6 +20,11 @@ namespace ConfirmationDialogs {
 		public string ConfirmationText;
 
 		/// <summary>
+		///  Whether to use
+		/// </summary>
+		public bool ConfirmByRetyping;
+
+		/// <summary>
 		///  The Text displayed on the confirm button
 		/// </summary>
 		[NotNull]
@@ -32,12 +37,7 @@ namespace ConfirmationDialogs {
 		public string DescriptionText;
 
 		/// <summary>
-		/// Whether to use 
-		/// </summary>
-		public bool ConfirmByRetyping;
-
-		/// <summary>
-		///  The <see cref="ImageSource"/> providing the icon of the confirmation windows, use <see langword="null"/> for default icon
+		///  The <see cref="ImageSource" /> providing the icon of the confirmation windows, use <see langword="null" /> for default icon
 		/// </summary>
 		[CanBeNull]
 		public ImageSource Icon;
@@ -89,13 +89,13 @@ namespace ConfirmationDialogs {
 
 		internal ConfirmationWindowConfiguration CreateFromDefaults(string descriptionText,
 			string title, bool? confirmByRetyping, string confirmationText, string confirmButtonText, string abortButtonText,
-			Optional<ImageSource> icon) =>
+			Option<ImageSource> icon) =>
 			new ConfirmationWindowConfiguration(true) {
 				ConfirmByRetyping = confirmByRetyping ?? ConfirmByRetyping,
 				Title = title ?? Title,
 				ConfirmationText = confirmationText ?? ConfirmationText,
 				DescriptionText = descriptionText ?? DescriptionText,
-				Icon = icon.Or(Icon),
+				Icon = icon.ValueOr(Icon),
 				ContinueButtonText = confirmButtonText ?? ContinueButtonText,
 				AbortButtonText = abortButtonText ?? AbortButtonText
 			};

@@ -50,15 +50,18 @@ First you have four ModifierKeys which requirements can be changed in the follow
 - Alt 
 - Control
 - Windows
+
 For each of them there are 3 different modes of Requirement:
 - Required (Needed for skipping)
 - MustNot (If pressed no skipping by keys at all)
 - Ignored
+
 Note: if all `ModifierRequirement`s are set to `Ignored` the confirmation will be skipped by default. 
 You can find these states in the `ModifierRequirement` enumeration.
 For skipping there are additionally the following two settings:
 - SkipAlways
 - AllowSkip
+
 There are multiple ways of editing these settings.
 To edit a single setting run e.g.:
 

@@ -36,8 +36,49 @@ Or you can disable the skip functionality at all:
 ConfirmationSettings.SkipConfiguration=SkipConfirmationConfiguration.Presets.NeverSkip;
 ```
 
-Or to return back to default
+Or to return back to default:
 
 ```
 ConfirmationSettings.SkipConfiguration=SkipConfirmationConfiguration.Presets.ShiftForSkip;
+```
+
+## Manual skip configuration
+
+If you have really special requirements this package serves you:
+First you have four ModifierKeys which requirements can be changed in the following:
+- Shift
+- Alt 
+- Control
+- Windows
+For each of them there are 3 different modes of Requirement:
+- Required (Needed for skipping)
+- MustNot (If pressed no skipping by keys at all)
+- Ignored
+Note: if all `ModifierRequirement`s are set to `Ignored` the confirmation will be skipped by default. 
+You can find these states in the `ModifierRequirement` enumeration.
+For skipping there are additionally the following two settings:
+- SkipAlways
+- AllowSkip
+There are multiple ways of editing these settings.
+To edit a single setting run e.g.:
+
+```
+ConfirmationSettings.Control = ModifierRequirement.Required
+```
+
+To change multiple values you can run:
+
+```
+ConfirmationSettings.SetDefaultSkipConfiguration(shift: ModifierRequirement.Ignored, control: ModifierRequirement.Required);
+```
+
+If you want to replace the configuration completely just run:
+
+```
+ConfirmationSettings.SkipConfirmationConfiguration = 
+	new SkipConfirmationConfiguration{
+		AllowSkip = true,
+		Control =  ModifierRequirement.Required,
+		Windows = ModifierRequirement.MustNot
+	};
 ```

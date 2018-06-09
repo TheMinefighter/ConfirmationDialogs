@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>TheMinefighter.ConfirmationDialogs</id>
-    <version>1.0.3-beta</version>
+    <version>1.1</version>
     <authors>Tobias Brohl</authors>
     <owners>TheMinefighter</owners>
     <licenseUrl>https://github.com/TheMinefighter/ConfirmationDialogs/blob/master/LICENSE.md</licenseUrl>
-    <projectUrl>https://github.com/TheMinefighter/ConfirmationDialogs</projectUrl>
+    <projectUrl>https://theminefighter.github.io/ConfirmationDialogs/</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Provides a simple interface foe skipable Confirmation dialogs</description>
-    <releaseNotes>Fixes I dont wanna talk about..</releaseNotes>
+    <description>Provides a simple interface for skipable Confirmation dialogs</description>
+    <releaseNotes>First pretestet release, easy support for defaults custom settings and much more, read documentation @ theminefighter.github.io/ConfirmationDialogs/CodingDoc.html to learn more</releaseNotes>
     <copyright>Copyright 2018 Tobias Brohl</copyright>
     <tags>WPF Dialog Confirmation</tags>
     <dependencies>

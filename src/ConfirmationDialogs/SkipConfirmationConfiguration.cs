@@ -11,7 +11,6 @@ namespace ConfirmationDialogs {
 
 		//public Dictionary<ModifierKeys,ModifierRequirement> Requirements;
 
-
 		public object Clone() => new SkipConfirmationConfiguration {
 			AllowSkip = AllowSkip,
 			SkipAlways = SkipAlways,

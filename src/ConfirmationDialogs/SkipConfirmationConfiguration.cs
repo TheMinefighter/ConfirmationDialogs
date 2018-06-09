@@ -20,24 +20,27 @@ namespace ConfirmationDialogs {
 			Control = Control,
 			Windows = Windows
 		};
-		internal SkipConfirmationConfiguration CreateFromDefaults(ModifierRequirement? shift, ModifierRequirement? alt, ModifierRequirement? control, ModifierRequirement? windows,
+
+		internal SkipConfirmationConfiguration CreateFromDefaults(ModifierRequirement? shift, ModifierRequirement? alt,
+			ModifierRequirement? control, ModifierRequirement? windows,
 			bool? allowSkip, bool? skipAlways) =>
 			new SkipConfirmationConfiguration {
 				Shift = shift ?? Shift,
 				Alt = alt ?? Alt,
 				Control = control ?? Control,
 				Windows = windows ?? Windows,
-				AllowSkip = allowSkip?? AllowSkip,
-				SkipAlways = skipAlways ?? SkipAlways,
-				};
+				AllowSkip = allowSkip ?? AllowSkip,
+				SkipAlways = skipAlways ?? SkipAlways
+			};
+
 		public static class Presets {
 			public static SkipConfirmationConfiguration ShiftForSKip => new SkipConfirmationConfiguration {
 				Shift = ModifierRequirement.Required,
 				AllowSkip = true
 			};
 
-			public static  SkipConfirmationConfiguration SkipAlways => new SkipConfirmationConfiguration {SkipAlways = true};
-			public static  SkipConfirmationConfiguration NeverSkip => new SkipConfirmationConfiguration();
+			public static SkipConfirmationConfiguration SkipAlways => new SkipConfirmationConfiguration {SkipAlways = true};
+			public static SkipConfirmationConfiguration NeverSkip => new SkipConfirmationConfiguration();
 		}
 	}
 }

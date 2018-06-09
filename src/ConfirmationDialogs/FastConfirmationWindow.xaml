@@ -16,7 +16,8 @@
 			<ColumnDefinition Width="5" />
 			<ColumnDefinition />
 		</Grid.ColumnDefinitions>
-		<TextBox x:Name="DescriptionTb" Margin="10,10,10,35" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0" 	 Background="Transparent" IsReadOnly="True" Grid.ColumnSpan="3" />
+		<TextBox x:Name="DescriptionTb" Margin="10,10,10,35" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"
+		         Background="Transparent" IsReadOnly="True" Grid.ColumnSpan="3" />
 		<Button Grid.Column="0" x:Name="CancelBtn" Click="CancelBtn_OnClick" Content="" Margin="10,0,0,10"
 		        RenderTransformOrigin="0.629,1.443" Height="20" VerticalAlignment="Bottom" />
 		<Button x:Name="ConfirmBtn" Click="ConfirmBtn_OnClick" Content=""

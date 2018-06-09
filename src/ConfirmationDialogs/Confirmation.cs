@@ -5,8 +5,8 @@ using Optional;
 
 namespace ConfirmationDialogs {
 	public static class Confirmation {
-		internal static SkipConfirmationConfiguration SkipConfiguration =  SkipConfirmationConfiguration.Presets.ShiftForSKip;
-		internal static ConfirmationWindowConfiguration WindowConfiguration= new ConfirmationWindowConfiguration();
+		internal static SkipConfirmationConfiguration SkipConfiguration = SkipConfirmationConfiguration.Presets.ShiftForSKip;
+		internal static ConfirmationWindowConfiguration WindowConfiguration = new ConfirmationWindowConfiguration();
 
 		internal static bool ShouldSkip(SkipConfirmationConfiguration stg) {
 			if (stg.SkipAlways) {
@@ -49,7 +49,6 @@ namespace ConfirmationDialogs {
 		}
 
 		/// <summary>
-		/// 
 		/// </summary>
 		/// <param name="windowOverride"></param>
 		/// <param name="skipOverride"></param>

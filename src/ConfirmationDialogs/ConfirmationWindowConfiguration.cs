@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Media;
+﻿using System.Windows.Media;
 using JetBrains.Annotations;
 using Optional;
 
@@ -99,6 +98,5 @@ namespace ConfirmationDialogs {
 				ContinueButtonText = confirmButtonText ?? ContinueButtonText,
 				AbortButtonText = abortButtonText ?? AbortButtonText
 			};
-		
 	}
 }

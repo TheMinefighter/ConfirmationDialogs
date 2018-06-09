@@ -1,19 +1,19 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace ConfirmationDialogs {
 	/// <summary>
 	///  Interaction logic for ConfirmationWindow.xaml
 	/// </summary>
 	internal partial class ConfirmationWindow : Window {
+		internal static float FontSizeMultiplier =
+			(float) (SystemFonts.MessageFontSize * 1.333333333333333333333333333333333333333333333333333333333333333333333333333);
+
 		internal ConfirmationWindow(ConfirmationTag tag) {
 			InitializeComponent();
 			Tag = tag;
 		}
 
-		internal static float FontSizeMultiplier =
-			(float) (SystemFonts.MessageFontSize * 1.333333333333333333333333333333333333333333333333333333333333333333333333333);
 		private void ConfirmBtn_OnClick(object sender, RoutedEventArgs e) {
 			if (ConfirmationBoxTb.Text == ((ConfirmationTag) Tag).Confirmation) {
 				((ConfirmationTag) Tag).Confirmed = true;
@@ -40,6 +40,7 @@ namespace ConfirmationDialogs {
 			if (confirmationTag.Icon != null) {
 				Icon = confirmationTag.Icon;
 			}
+
 			Height = DescriptionTb.LineCount * FontSizeMultiplier + 123;
 		}
 	}

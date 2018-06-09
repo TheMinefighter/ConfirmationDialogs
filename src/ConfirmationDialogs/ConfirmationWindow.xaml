@@ -17,10 +17,10 @@
 		</Grid.ColumnDefinitions>
 		<TextBlock x:Name="WhatToWriteTb" Margin="10,0,10,62" TextWrapping="Wrap" Grid.ColumnSpan="3" Height="16"
 		           VerticalAlignment="Bottom" />
-		<TextBox x:Name="DescriptionTb" Background="Transparent"  
-		         BorderThickness="0" 	
-		         IsReadOnly="True" 
-		         TextWrapping="Wrap" Margin="10,10,10,78" BorderBrush="Transparent" Grid.ColumnSpan="3"/>     
+		<TextBox x:Name="DescriptionTb" Background="Transparent"
+		         BorderThickness="0"
+		         IsReadOnly="True"
+		         TextWrapping="Wrap" Margin="10,10,10,78" BorderBrush="Transparent" Grid.ColumnSpan="3" />
 		<TextBox x:Name="ConfirmationBoxTb"
 		         Margin="10,0,10,39" TextWrapping="Wrap" Grid.ColumnSpan="3" Height="23" VerticalAlignment="Bottom" />
 		<Button x:Name="CancelBtn" Click="CancelBtn_OnClick" Content="" Margin="10,0,0,10"

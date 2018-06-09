@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace ConfirmationDialogs {
 	/// <summary>
@@ -19,8 +18,7 @@ namespace ConfirmationDialogs {
 
 		private void CancelBtn_OnClick(object sender, RoutedEventArgs e) {
 			((ConfirmationTag) Tag).Confirmed = false;
-			MessageBox.Show(DescriptionTb.LineCount.ToString());
-			//Close();
+			Close();
 		}
 
 		private void FastConfirmationWindow_OnLoaded(object sender, RoutedEventArgs e) {
@@ -31,8 +29,8 @@ namespace ConfirmationDialogs {
 			if (confirmationTag.Icon != null) {
 				Icon = confirmationTag.Icon;
 			}
-			Height = DescriptionTb.LineCount * ConfirmationWindow.FontSizeMultiplier + 79;
 
+			Height = DescriptionTb.LineCount * ConfirmationWindow.FontSizeMultiplier + 79;
 		}
 	}
 }

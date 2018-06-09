@@ -99,5 +99,6 @@ namespace ConfirmationDialogs {
 				ContinueButtonText = confirmButtonText ?? ContinueButtonText,
 				AbortButtonText = abortButtonText ?? AbortButtonText
 			};
+		
 	}
 }

@@ -5,38 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         mc:Ignorable="d"
+        x:ClassModifier="internal"
         Width="329" Height="156"
         d:DesignHeight="156.276" d:DesignWidth="329.288">
 
-	<Window.Resources>	<Style TargetType="TextBox" x:Key="EmptyStyle" >
-			<Setter Property="Template">
-				<Setter.Value><ControlTemplate TargetType="TextBox">
-					<Border Name="Border" CornerRadius="2" BorderThickness="0"
-					        Background="#C0C0C0"
-					        BorderBrush="#404040">
-						<ContentPresenter Margin="2" 
-						                  HorizontalAlignment="Center"
-						                  VerticalAlignment="Center" 
-						                  RecognizesAccessKey="True"/>
-					</Border>
-					<ControlTemplate.Triggers>
-						<Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Border" Property="BorderBrush" Value="Transparent"></Setter></Trigger>
-					</ControlTemplate.Triggers>
-				</ControlTemplate></Setter.Value>
-			</Setter>
-			<!---
-			<Style.Triggers>
-				<Trigger Property="IsFocused" Value="True"><Setter TargetName="BorderThicknessProperty" Value="10"></Setter><Setter TargetName="BorderBrushProperty" Value="Red" />
-				</Trigger>
-				<Trigger Property="IsMouseOver" Value="True"><Setter TargetName="BorderThicknessProperty" Value="10"></Setter><Setter TargetName="BorderBrushProperty" Value="Red" /></Trigger>
-				<Trigger Property="IsMouseDirectlyOver" Value="True"><Setter TargetName="BorderThicknessProperty" Value="10"></Setter><Setter TargetName="BorderBrushProperty" Value="Red" /></Trigger>
-			</Style.Triggers>
-			-->
-			<Setter Property="SnapsToDevicePixels" Value="True"/>
-			<Setter Property="OverridesDefaultStyle" Value="True"/>
-			<!--Setter Property="FocusVisualStyle" Value="{x:Null}"/-->
-		</Style>
-	</Window.Resources>
 	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition />
@@ -47,7 +19,7 @@
 		           VerticalAlignment="Bottom" />
 		<TextBox x:Name="DescriptionTb" Background="Transparent"  
 		         BorderThickness="0" 	
-		         IsReadOnly="True"
+		         IsReadOnly="True" 
 		         TextWrapping="Wrap" Margin="10,10,10,78" BorderBrush="Transparent" Grid.ColumnSpan="3"/>     
 		<TextBox x:Name="ConfirmationBoxTb"
 		         Margin="10,0,10,39" TextWrapping="Wrap" Grid.ColumnSpan="3" Height="23" VerticalAlignment="Bottom" />

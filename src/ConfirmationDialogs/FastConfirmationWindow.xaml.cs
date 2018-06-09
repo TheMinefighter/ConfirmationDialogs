@@ -1,10 +1,11 @@
 ﻿using System.Windows;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace ConfirmationDialogs {
 	/// <summary>
 	///  Interaction logic for FastConfirmationWindow.xaml
 	/// </summary>
-	public partial class FastConfirmationWindow : Window {
+	internal partial class FastConfirmationWindow : Window {
 		internal FastConfirmationWindow(ConfirmationTag tag) {
 			InitializeComponent();
 			Tag = tag;
@@ -18,7 +19,8 @@ namespace ConfirmationDialogs {
 
 		private void CancelBtn_OnClick(object sender, RoutedEventArgs e) {
 			((ConfirmationTag) Tag).Confirmed = false;
-			Close();
+			MessageBox.Show(DescriptionTb.LineCount.ToString());
+			//Close();
 		}
 
 		private void FastConfirmationWindow_OnLoaded(object sender, RoutedEventArgs e) {
@@ -29,6 +31,8 @@ namespace ConfirmationDialogs {
 			if (confirmationTag.Icon != null) {
 				Icon = confirmationTag.Icon;
 			}
+			Height = DescriptionTb.LineCount * ConfirmationWindow.FontSizeMultiplier + 79;
+
 		}
 	}
 }

@@ -1,18 +1,19 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace ConfirmationDialogs {
 	/// <summary>
 	///  Interaction logic for ConfirmationWindow.xaml
 	/// </summary>
-	public partial class ConfirmationWindow : Window {
+	internal partial class ConfirmationWindow : Window {
 		internal ConfirmationWindow(ConfirmationTag tag) {
 			InitializeComponent();
 			Tag = tag;
 		}
 
-
+		internal static float FontSizeMultiplier =
+			(float) (SystemFonts.MessageFontSize * 1.333333333333333333333333333333333333333333333333333333333333333333333333333);
 		private void ConfirmBtn_OnClick(object sender, RoutedEventArgs e) {
 			if (ConfirmationBoxTb.Text == ((ConfirmationTag) Tag).Confirmation) {
 				((ConfirmationTag) Tag).Confirmed = true;
@@ -39,11 +40,7 @@ namespace ConfirmationDialogs {
 			if (confirmationTag.Icon != null) {
 				Icon = confirmationTag.Icon;
 			}
-		}
-
-		private void DescriptionTb_OnMouseEnter(object sender, MouseEventArgs e) {
-			System.Windows.Forms.MessageBox.Show("Test");
-			throw new System.NotImplementedException();
+			Height = DescriptionTb.LineCount * FontSizeMultiplier + 123;
 		}
 	}
 }

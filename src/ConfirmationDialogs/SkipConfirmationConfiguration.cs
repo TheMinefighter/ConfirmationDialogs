@@ -31,13 +31,13 @@ namespace ConfirmationDialogs {
 				SkipAlways = skipAlways ?? SkipAlways,
 				};
 		public static class Presets {
-			public static readonly SkipConfirmationConfiguration ShiftForSKip = new SkipConfirmationConfiguration {
+			public static SkipConfirmationConfiguration ShiftForSKip => new SkipConfirmationConfiguration {
 				Shift = ModifierRequirement.Required,
 				AllowSkip = true
 			};
 
-			public static readonly SkipConfirmationConfiguration SkipAlways = new SkipConfirmationConfiguration {SkipAlways = true};
-			public static readonly SkipConfirmationConfiguration NeverSkip = new SkipConfirmationConfiguration();
+			public static  SkipConfirmationConfiguration SkipAlways => new SkipConfirmationConfiguration {SkipAlways = true};
+			public static  SkipConfirmationConfiguration NeverSkip => new SkipConfirmationConfiguration();
 		}
 	}
 }

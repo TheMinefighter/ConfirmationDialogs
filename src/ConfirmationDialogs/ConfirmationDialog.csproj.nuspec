@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TheMinefighter.ConfirmationDialogs</id>
+    <version>1.0.3-beta</version>
+    <authors>Tobias Brohl</authors>
+    <owners>TheMinefighter</owners>
+    <licenseUrl>https://github.com/TheMinefighter/ConfirmationDialogs/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/TheMinefighter/ConfirmationDialogs</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Provides a simple interface foe skipable Confirmation dialogs</description>
+    <releaseNotes>Fixes I dont wanna talk about..</releaseNotes>
+    <copyright>Copyright 2018 Tobias Brohl</copyright>
+    <tags>WPF Dialog Confirmation</tags>
+    <dependencies>
+	<group targetFramework=".NETFramework4.0" />
+    </dependencies>
+  </metadata>
+    <files>
+    <file src="F:\TobiasAcc\Documents\CS\ConfDia\source\ConfirmationDialogs\bin\Release\ConfirmationDialogs.dll" target="lib\net40\ConfirmationDialogs.dll" />
+    <file src="F:\TobiasAcc\Documents\CS\ConfDia\source\ConfirmationDialogs\bin\Release\ConfirmationDialogs.xml" target="lib\net40\ConfirmationDialogs.xml" />
+ </files>
+</package>

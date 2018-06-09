@@ -4,7 +4,8 @@ using JetBrains.Annotations;
 namespace ConfirmationDialogs {
 	internal class ConfirmationTag {
 		public bool Confirmed;
-
+[NotNull]
+public string Title { get; set; }
 		[NotNull]
 		public string DescriptionText { get; set; }
 

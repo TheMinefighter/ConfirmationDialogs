@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using System.Windows.Media;
-using Optional;
+using OptionalSharp;
 
 namespace ConfirmationDialogs {
 	public static class Confirmation {
@@ -63,17 +63,17 @@ namespace ConfirmationDialogs {
 		/// </summary>
 		/// <param name="text">The warning text to Display, null for default</param>
 		/// <param name="title"></param>
-		/// <param name="fast"></param>
+		/// <param name="confirmByRetyping"></param>
 		/// <param name="confirmationText">The text the user has to type to confirm the Action, null for default</param>
 		/// <param name="continueBtn">The text to display on the continue button, null for default</param>
 		/// <param name="cancleBtn">The text to display on the cancel button, null for default</param>
 		/// <param name="configurationOverride"></param>
 		/// <returns>Whether the user confirmed the action</returns>
 		// ReSharper disable once MethodOverloadWithOptionalParameter
-		public static bool Confirm(string text = null, string title = null, bool? fast = null, string confirmationText = null,
-			string continueBtn = null, string cancleBtn = null) =>
+		public static bool Confirm(string text = null, string title = null, bool? confirmByRetyping = null, string confirmationText = null,
+			string continueBtn = null, string cancleBtn = null,Optional<ImageSource> icon=default(Optional<ImageSource>)) =>
 			ShouldSkip(SkipConfiguration) ||
-			WindowConfiguration.CreateFromDefaults(text, title, fast, confirmationText, continueBtn, cancleBtn, default(Option<ImageSource>))
+			WindowConfiguration.CreateFromDefaults(text, title, confirmByRetyping, confirmationText, continueBtn, cancleBtn, icon)
 				.Confirm();
 
 //		/// <summary>

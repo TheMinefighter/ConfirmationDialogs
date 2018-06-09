@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media;
 using JetBrains.Annotations;
-using Optional;
+using OptionalSharp;
 
 namespace ConfirmationDialogs {
 	public static class ConfirmationSettings {
@@ -26,9 +26,9 @@ namespace ConfirmationDialogs {
 			get => Confirmation.SkipConfiguration.AllowSkip;
 		}
 
-		public static bool Fast {
-			set => Confirmation.WindowConfiguration.Fast = value;
-			get => Confirmation.WindowConfiguration.Fast;
+		public static bool ConfirmByRetyping {
+			set => Confirmation.WindowConfiguration.ConfirmByRetyping = value;
+			get => Confirmation.WindowConfiguration.ConfirmByRetyping;
 		}
 
 		[CanBeNull]
@@ -77,13 +77,13 @@ namespace ConfirmationDialogs {
 			get => Confirmation.WindowConfiguration.Title;
 		}
 
-		public static void SetDefaultWindowConfiguration(bool? fast = null, string title = null, string confirmationText = null,
+		public static void SetDefaultWindowConfiguration(bool? confirmByRetyping = null, string title = null, string confirmationText = null,
 			string descriptionText = null,
-			Option<ImageSource> icon = default(Option<ImageSource>), string confirmButtonText = null, string abortButtonText = null) {
+			Optional<ImageSource> icon = default(Optional<ImageSource>), string confirmButtonText = null, string abortButtonText = null) {
 			Confirmation.WindowConfiguration =
 				Confirmation.WindowConfiguration.CreateFromDefaults(descriptionText,
 					title,
-					fast, confirmationText, confirmationText, abortButtonText, icon);
+					confirmByRetyping, confirmationText, confirmationText, abortButtonText, icon);
 		}
 
 		public static void SetDefaultSkipConfiguration(ModifierRequirement? shift = null, ModifierRequirement? alt = null,

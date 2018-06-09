@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media;
 using JetBrains.Annotations;
-using Optional;
+using OptionalSharp;
 
 namespace ConfirmationDialogs {
 	public class ConfirmationWindowConfiguration {
@@ -32,12 +32,12 @@ namespace ConfirmationDialogs {
 		public string DescriptionText;
 
 		/// <summary>
-		///  Whether to use the dialog without entering a confirmation text
+		/// Whether to use 
 		/// </summary>
-		public bool Fast;
+		public bool ConfirmByRetyping;
 
 		/// <summary>
-		///  The Icon of the confirmation windows
+		///  The <see cref="ImageSource"/> providing the icon of the confirmation windows, use <see langword="null"/> for default icon
 		/// </summary>
 		[CanBeNull]
 		public ImageSource Icon;
@@ -53,14 +53,15 @@ namespace ConfirmationDialogs {
 			Confirmation = ConfirmationText,
 			ContinueButton = ContinueButtonText,
 			DescriptionText = DescriptionText,
-			Icon = Icon
+			Icon = Icon,
+			Title = Title
 		};
 
 		/// <summary>
 		///  Creates a new <see cref="ConfirmationWindowConfiguration" /> and initalizes defaults
 		/// </summary>
 		public ConfirmationWindowConfiguration() {
-			Fast = true;
+			ConfirmByRetyping = false;
 			Title = ConfirmationStrings.DefaultTitle;
 			ConfirmationText = ConfirmationStrings.DefaultConfirmationText;
 			DescriptionText = ConfirmationStrings.DefaultDescriptionText;
@@ -74,7 +75,7 @@ namespace ConfirmationDialogs {
 		private ConfirmationWindowConfiguration(bool empty) { }
 
 		internal bool Confirm() {
-			if (!Fast) {
+			if (ConfirmByRetyping) {
 				ConfirmationWindow window = new ConfirmationWindow(Tag);
 				window.ShowDialog();
 				return window.Tag is ConfirmationTag b && b.Confirmed;
@@ -87,14 +88,14 @@ namespace ConfirmationDialogs {
 		}
 
 		internal ConfirmationWindowConfiguration CreateFromDefaults(string descriptionText,
-			string title, bool? fast, string confirmationText, string confirmButtonText, string abortButtonText,
-			Option<ImageSource> icon) =>
+			string title, bool? confirmByRetyping, string confirmationText, string confirmButtonText, string abortButtonText,
+			Optional<ImageSource> icon) =>
 			new ConfirmationWindowConfiguration(true) {
-				Fast = fast ?? Fast,
+				ConfirmByRetyping = confirmByRetyping ?? ConfirmByRetyping,
 				Title = title ?? Title,
 				ConfirmationText = confirmationText ?? ConfirmationText,
 				DescriptionText = descriptionText ?? DescriptionText,
-				Icon = icon.ValueOr(Icon),
+				Icon = icon.Or(Icon),
 				ContinueButtonText = confirmButtonText ?? ContinueButtonText,
 				AbortButtonText = abortButtonText ?? AbortButtonText
 			};

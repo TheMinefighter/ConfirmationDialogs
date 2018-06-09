@@ -41,6 +41,7 @@ namespace ConfirmationDialogs {
 				Icon = confirmationTag.Icon;
 			}
 
+			this.Title = confirmationTag.Title;
 			Height = DescriptionTb.LineCount * FontSizeMultiplier + 123;
 		}
 	}

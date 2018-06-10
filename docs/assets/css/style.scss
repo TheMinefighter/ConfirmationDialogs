@@ -103,6 +103,7 @@ blockquote {
 }
 
 code {
+  background: none;
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, monospace;
   color:#efefef;
   font-size:13px;
@@ -302,6 +303,9 @@ section {
         display: block;
       }
     }
+  }
+  section {
+	  max-width: 1000px
   }
 }
 

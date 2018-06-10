@@ -104,7 +104,7 @@ strong {
 }
 
 .wrapper {
-  max-width:1000px !important; 
+
   margin:0 auto;
   position:relative;
   padding: 0 20px;
@@ -342,7 +342,9 @@ section {
       }
     }
   }
-  
+  .wrapper {
+    max-width:1000px !important;
+  }
   section {
 	  max-width: 1000px !important; 
   }

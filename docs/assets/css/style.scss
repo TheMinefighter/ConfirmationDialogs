@@ -59,13 +59,18 @@ h3 {
 }
 
 a {
-  color:#ffcc00;
+  color:#c10000;
   font-weight:400;
   text-decoration:none;
 
   &:hover {
-    color: #ffeb9b;
+    color: #e80606;
   }
+}
+
+#banner {
+  background: #ba0000;
+  border: 1px solid #c10000;
 }
 
 a small {
@@ -176,8 +181,8 @@ nav ul a {
   height: 60px;
   width: 100%;
   position: fixed;
-  background-color: #a8430d;
-  background-image: none;
+  background: #a8430d;
+  background-image: inital;
   border-bottom: 4px solid #434343;
   box-shadow: 0px 1px 3px rgba(0,0,0,.25);
 

@@ -20,6 +20,9 @@ body {
 nav ul li.tag-h1 a {
 	color: #a9a9a9;
 }
+#banner {
+  margin-right: -532pxpx;
+}
 
 h1, h2, h3, h4, h5, h6 {
   color:#e8e8e8;
@@ -70,6 +73,7 @@ a {
 
 #banner .fork {
   background-color: #5cbc1e;
+  margin-left: -475px;
 }
 
 #banner .button {
@@ -80,6 +84,7 @@ a {
 #banner {
   background: #348400;
   border: 1px solid #418c10;
+  margin-right: -532px;
 }
 
 a small {
@@ -192,7 +197,12 @@ header {
   background-image: inital;
   background-color: rgb(132, 5, 5);
 }
-
+nav {
+  margin-left: -730px;
+}
+footer {
+  margin-left: -680px;
+}
 #header {
   z-index: 100;
   left:0;
@@ -270,6 +280,7 @@ section {
   border: none;
   margin-top: 70px;
   box-shadow: none;
+  margin-left: -150px;
   #title {
     border: 0;
     outline: none;

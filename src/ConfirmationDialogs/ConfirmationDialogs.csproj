@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ConfirmationDialog.csproj" />
+    <None Include="ConfirmationDialog.csproj.nuspec" />
     <EmbeddedResource Include="ConfirmationStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ConfirmationStrings.Designer.cs</LastGenOutput>

@@ -8,16 +8,16 @@
     <licenseUrl>https://github.com/TheMinefighter/ConfirmationDialogs/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://theminefighter.github.io/ConfirmationDialogs/</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Provides a simple interface for skipable Confirmation dialogs</description>
-    <releaseNotes>First pretestet release, easy support for defaults custom settings and much more, read documentation @ theminefighter.github.io/ConfirmationDialogs/CodingDoc.html to learn more</releaseNotes>
+    <description>Provides a simple interface for WPF Confirmation dialogs, which can be skipped by pressing shift and are extensively configureable. Targets .NET Framework 3.5</description>
+    <releaseNotes>First pretestet release, easy support for defaults custom settings and much more, read documentation @ theminefighter.github.io/ConfirmationDialogs/CodingDoc.html to learn more!</releaseNotes>
     <copyright>Copyright 2018 Tobias Brohl</copyright>
     <tags>WPF Dialog Confirmation</tags>
     <dependencies>
-	<group targetFramework=".NETFramework4.0" />
+	<group targetFramework=".NETFramework3.5" />
     </dependencies>
   </metadata>
     <files>
-    <file src="F:\TobiasAcc\Documents\CS\ConfDia\source\ConfirmationDialogs\bin\Release\ConfirmationDialogs.dll" target="lib\net40\ConfirmationDialogs.dll" />
-    <file src="F:\TobiasAcc\Documents\CS\ConfDia\source\ConfirmationDialogs\bin\Release\ConfirmationDialogs.xml" target="lib\net40\ConfirmationDialogs.xml" />
+    <file src="F:\TobiasAcc\Documents\CS\ConfDia\source\ConfirmationDialogs\bin\Release\ConfirmationDialogs.dll" target="lib\net35\ConfirmationDialogs.dll" />
+    <file src="F:\TobiasAcc\Documents\CS\ConfDia\source\ConfirmationDialogs\bin\Release\ConfirmationDialogs.xml" target="lib\net35\ConfirmationDialogs.xml" />
  </files>
 </package>

@@ -62,19 +62,24 @@ namespace ConfirmationDialogs {
 		/// <summary>
 		///  Starts a simple confirmation dialog
 		/// </summary>
-		/// <param name="descripionText">The warning text to Display, null for default</param>
-		/// <param name="title">The content of the title bar of the confirmation window, null for default</param>
-		/// <param name="confirmByRetyping">Whether the user has to retype a phrase, null for default</param>
-		/// <param name="confirmationText">The text the user has to type to confirm the Action, null for default</param>
-		/// <param name="confirmButtonText">The text to display on the continue button, null for default</param>
-		/// <param name="cancelButtonText">The text to display on the cancel button, null for default</param>
-		/// <param name="icon">The Icon of the window, use <see cref="Option.None"/> </param>
+		/// <param name="descripionText">The warning text to Display, <see langword="null"/> for default</param>
+		/// <param name="title">The content of the title bar of the confirmation window, <see langword="null"/> for default</param>
+		/// <param name="confirmByRetyping">Whether the user has to retype a phrase, <see langword="null"/> for default</param>
+		/// <param name="confirmationText">The text the user has to type to confirm the Action, <see langword="null"/> for default</param>
+		/// <param name="confirmButtonText">The text to display on the continue button, <see langword="null"/> for default</param>
+		/// <param name="cancelButtonText">The text to display on the cancel button, <see langword="null"/> for default</param>
+
 		/// <returns>Whether the user confirmed the action</returns>
 		// ReSharper disable once MethodOverloadWithOptionalParameter
+		/*		/// <param name="icon">The Icon of the window, use Option.None for default and <see cref="Option"/>&lt;<see cref="ImageSource"/>&gt;.<see cref="Option.Some"/>(<see langword="null"/>) to override it not to change the icon </param> */
 		public static bool Confirm(string descripionText = null, string title = null, bool? confirmByRetyping = null, string confirmationText = null,
-			string confirmButtonText = null, string cancelButtonText = null, Option<ImageSource> icon = default(Option<ImageSource>)) =>
+			string confirmButtonText = null, string cancelButtonText = null
+			//, Option<ImageSource> icon = default(Option<ImageSource>)
+			) =>
 			ShouldSkip(SkipConfiguration) ||
-			WindowConfiguration.CreateFromDefaults(descripionText, title, confirmByRetyping, confirmationText, confirmButtonText, cancelButtonText, icon)
+			WindowConfiguration.CreateFromDefaults(descripionText, title, confirmByRetyping, confirmationText, confirmButtonText, cancelButtonText
+				//	, icon
+					)
 				.Confirm();
 
 //		/// <summary>

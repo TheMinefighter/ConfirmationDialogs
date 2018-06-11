@@ -36,11 +36,11 @@ namespace ConfirmationDialogs {
 		[NotNull]
 		public string DescriptionText;
 
-		/// <summary>
-		///  The <see cref="ImageSource" /> providing the icon of the confirmation windows, use <see langword="null" /> for default icon
-		/// </summary>
-		[CanBeNull]
-		public ImageSource Icon;
+//		/// <summary>
+//		///  The <see cref="ImageSource" /> providing the icon of the confirmation windows, use <see langword="null" /> for default icon
+//		/// </summary>
+//		[CanBeNull]
+//		public ImageSource Icon;
 
 		/// <summary>
 		///  The Window title
@@ -53,7 +53,7 @@ namespace ConfirmationDialogs {
 			Confirmation = ConfirmationText,
 			ContinueButton = ConfirmButtonText,
 			DescriptionText = DescriptionText,
-			Icon = Icon,
+		//	Icon = Icon,
 			Title = Title
 		};
 
@@ -88,14 +88,15 @@ namespace ConfirmationDialogs {
 		}
 
 		internal ConfirmationWindowConfiguration CreateFromDefaults(string descriptionText,
-			string title, bool? confirmByRetyping, string confirmationText, string confirmButtonText, string abortButtonText,
-			Option<ImageSource> icon) =>
+			string title, bool? confirmByRetyping, string confirmationText, string confirmButtonText, string abortButtonText
+			//,Option<ImageSource> icon
+			) =>
 			new ConfirmationWindowConfiguration(true) {
 				ConfirmByRetyping = confirmByRetyping ?? ConfirmByRetyping,
 				Title = title ?? Title,
 				ConfirmationText = confirmationText ?? ConfirmationText,
 				DescriptionText = descriptionText ?? DescriptionText,
-				Icon = icon.ValueOr(Icon),
+			//	Icon = icon.ValueOr(Icon),
 				ConfirmButtonText = confirmButtonText ?? ConfirmButtonText,
 				CancelButtonText = abortButtonText ?? CancelButtonText
 			};

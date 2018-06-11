@@ -76,14 +76,14 @@ namespace ConfirmationDialogs {
 			get => Confirmation.WindowConfiguration.ConfirmButtonText;
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
-		[CanBeNull]
-		public static ImageSource Icon {
-			set => Confirmation.WindowConfiguration.Icon = value;
-			get => Confirmation.WindowConfiguration.Icon;
-		}
+//		/// <summary>
+//		/// The icon to display in the windows, <see langword="null"/> for not changing it
+//		/// </summary>
+//		[CanBeNull]
+//		public static ImageSource Icon {
+//			set => Confirmation.WindowConfiguration.Icon = value;
+//			get => Confirmation.WindowConfiguration.Icon;
+//		}
 
 		/// <summary>
 		/// Whether to skip all confirmation dialog (overrides <see cref="AllowSkip"/> if true)
@@ -135,20 +135,22 @@ namespace ConfirmationDialogs {
 		/// <summary>
 		/// 
 		/// </summary>
-		/// <param name="confirmByRetyping"></param>
-		/// <param name="title"></param>
-		/// <param name="confirmationText"></param>
 		/// <param name="descriptionText"></param>
-		/// <param name="icon"></param>
+		/// <param name="title"></param>
+		/// <param name="confirmByRetyping"></param>
+		/// <param name="confirmationText"></param>
 		/// <param name="confirmButtonText"></param>
 		/// <param name="abortButtonText"></param>
-		public static void SetDefaultWindowConfiguration(bool? confirmByRetyping = null, string title = null, string confirmationText = null,
-			string descriptionText = null,
-			Option<ImageSource> icon = default(Option<ImageSource>), string confirmButtonText = null, string abortButtonText = null) {
+		/// <param name="icon"></param>
+		public static void SetDefaultWindowConfiguration(string descriptionText = null,
+			string title = null, bool? confirmByRetyping = null, string confirmationText = null,
+			string confirmButtonText = null, string abortButtonText = null) {//Option<ImageSource> icon = default(Option<ImageSource>),
 			Confirmation.WindowConfiguration =
 				Confirmation.WindowConfiguration.CreateFromDefaults(descriptionText,
 					title,
-					confirmByRetyping, confirmationText, confirmationText, abortButtonText, icon);
+					confirmByRetyping, confirmationText, confirmationText, abortButtonText
+					//, icon
+					);
 		}
 
 		/// <summary>

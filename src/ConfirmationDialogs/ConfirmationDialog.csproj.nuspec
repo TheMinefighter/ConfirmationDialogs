@@ -17,7 +17,7 @@
     </dependencies>
   </metadata>
     <files>
-    <file src="F:\TobiasAcc\Documents\CS\ConfDia\source\ConfirmationDialogs\bin\Release\ConfirmationDialogs.dll" target="lib\net35\ConfirmationDialogs.dll" />
-    <file src="F:\TobiasAcc\Documents\CS\ConfDia\source\ConfirmationDialogs\bin\Release\ConfirmationDialogs.xml" target="lib\net35\ConfirmationDialogs.xml" />
+    <file src="F:\TobiasAcc\Documents\CS\ConfDia\src\ConfirmationDialogs\bin\Release\ConfirmationDialogs.dll" target="lib\net35\ConfirmationDialogs.dll" />
+    <file src="F:\TobiasAcc\Documents\CS\ConfDia\src\ConfirmationDialogs\bin\Release\ConfirmationDialogs.xml" target="lib\net35\ConfirmationDialogs.xml" />
  </files>
 </package>

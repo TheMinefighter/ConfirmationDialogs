@@ -1,4 +1,4 @@
-# Attribution
+# Acknowledgements
 ## Referenced Libraries
 The following attribution section is for libraries and other things which are referenced or used in some other way for this package but are NOT redistributed with the package.
 ### dotnet/corefx 

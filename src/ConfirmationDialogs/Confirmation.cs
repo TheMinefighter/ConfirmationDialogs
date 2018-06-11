@@ -25,18 +25,18 @@ namespace ConfirmationDialogs {
 			return false;
 		}
 
-		private static bool KeyAllowsSkip(ModifierKeys toUse, ModifierKeys modifierKeys, ModifierRequirement modifierRequirement) {
+		internal static bool KeyAllowsSkip(ModifierKeys toUse, ModifierKeys expectedModifierKey, ModifierRequirement modifierRequirement) {
 			switch (modifierRequirement) {
 				case ModifierRequirement.Ignored:
 					break;
 				case ModifierRequirement.Required:
-					if ((toUse & modifierKeys) != modifierKeys) {
+					if ((toUse & expectedModifierKey) != expectedModifierKey) {
 						return false;
 					}
 
 					break;
 				case ModifierRequirement.MustNot:
-					if ((toUse & modifierKeys) == modifierKeys) {
+					if ((toUse & expectedModifierKey) == expectedModifierKey) {
 						return false;
 					}
 
@@ -49,9 +49,10 @@ namespace ConfirmationDialogs {
 		}
 
 		/// <summary>
+		/// Starts a confirmation dialog
 		/// </summary>
-		/// <param name="windowOverride"></param>
-		/// <param name="skipOverride"></param>
+		/// <param name="windowOverride">The <see cref="ConfirmationWindowConfiguration"/> to use instead of the default</param>
+		/// <param name="skipOverride">The <see cref="SkipConfirmationConfiguration"/> to use instead of the default</param>
 		/// <returns></returns>
 		public static bool
 			// ReSharper disable once MethodOverloadWithOptionalParameter
@@ -59,21 +60,21 @@ namespace ConfirmationDialogs {
 			ShouldSkip(skipOverride ?? SkipConfiguration) || (windowOverride ?? WindowConfiguration).Confirm();
 
 		/// <summary>
-		///  Starts a confirmation dialog
+		///  Starts a simple confirmation dialog
 		/// </summary>
-		/// <param name="text">The warning text to Display, null for default</param>
-		/// <param name="title"></param>
-		/// <param name="confirmByRetyping"></param>
+		/// <param name="descripionText">The warning text to Display, null for default</param>
+		/// <param name="title">The content of the title bar of the confirmation window, null for default</param>
+		/// <param name="confirmByRetyping">Whether the user has to retype a phrase, null for default</param>
 		/// <param name="confirmationText">The text the user has to type to confirm the Action, null for default</param>
-		/// <param name="continueBtn">The text to display on the continue button, null for default</param>
-		/// <param name="cancleBtn">The text to display on the cancel button, null for default</param>
-		/// <param name="configurationOverride"></param>
+		/// <param name="confirmButtonText">The text to display on the continue button, null for default</param>
+		/// <param name="cancelButtonText">The text to display on the cancel button, null for default</param>
+		/// <param name="icon">The Icon of the window, use <see cref="Option.None"/> </param>
 		/// <returns>Whether the user confirmed the action</returns>
 		// ReSharper disable once MethodOverloadWithOptionalParameter
-		public static bool Confirm(string text = null, string title = null, bool? confirmByRetyping = null, string confirmationText = null,
-			string continueBtn = null, string cancleBtn = null, Option<ImageSource> icon = default(Option<ImageSource>)) =>
+		public static bool Confirm(string descripionText = null, string title = null, bool? confirmByRetyping = null, string confirmationText = null,
+			string confirmButtonText = null, string cancelButtonText = null, Option<ImageSource> icon = default(Option<ImageSource>)) =>
 			ShouldSkip(SkipConfiguration) ||
-			WindowConfiguration.CreateFromDefaults(text, title, confirmByRetyping, confirmationText, continueBtn, cancleBtn, icon)
+			WindowConfiguration.CreateFromDefaults(descripionText, title, confirmByRetyping, confirmationText, confirmButtonText, cancelButtonText, icon)
 				.Confirm();
 
 //		/// <summary>

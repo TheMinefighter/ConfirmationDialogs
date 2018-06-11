@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using ConfirmationDialogs;
+using Functional.Option;
 
 namespace Tests {
 	internal class Program {
@@ -36,6 +37,10 @@ namespace Tests {
 				confirmByRetyping:
 				false,
 				icon: writableBitmap /*"dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh "*/));
+		}
+
+		private static void EmptyTest() {
+		Confirmation.Confirm();
 		}
 	}
 }

@@ -11,7 +11,7 @@ namespace ConfirmationDialogs {
 		///  The Text displayed on the abort button
 		/// </summary>
 		[NotNull]
-		public string AbortButtonText;
+		public string CancelButtonText;
 
 		/// <summary>
 		///  The text the user has to type
@@ -28,7 +28,7 @@ namespace ConfirmationDialogs {
 		///  The Text displayed on the confirm button
 		/// </summary>
 		[NotNull]
-		public string ContinueButtonText;
+		public string ConfirmButtonText;
 
 		/// <summary>
 		///  The text describing why the action might be dangerous
@@ -49,9 +49,9 @@ namespace ConfirmationDialogs {
 		public string Title;
 
 		internal ConfirmationTag Tag => new ConfirmationTag {
-			CancelButton = AbortButtonText,
+			CancelButton = CancelButtonText,
 			Confirmation = ConfirmationText,
-			ContinueButton = ContinueButtonText,
+			ContinueButton = ConfirmButtonText,
 			DescriptionText = DescriptionText,
 			Icon = Icon,
 			Title = Title
@@ -65,8 +65,8 @@ namespace ConfirmationDialogs {
 			Title = ConfirmationStrings.DefaultTitle;
 			ConfirmationText = ConfirmationStrings.DefaultConfirmationText;
 			DescriptionText = ConfirmationStrings.DefaultDescriptionText;
-			ContinueButtonText = ConfirmationStrings.DefaultContinueButtonText;
-			AbortButtonText = ConfirmationStrings.DefaultCancelButton;
+			ConfirmButtonText = ConfirmationStrings.DefaultContinueButtonText;
+			CancelButtonText = ConfirmationStrings.DefaultCancelButton;
 		}
 
 //Why is there no hiding in C#?
@@ -96,8 +96,8 @@ namespace ConfirmationDialogs {
 				ConfirmationText = confirmationText ?? ConfirmationText,
 				DescriptionText = descriptionText ?? DescriptionText,
 				Icon = icon.ValueOr(Icon),
-				ContinueButtonText = confirmButtonText ?? ContinueButtonText,
-				AbortButtonText = abortButtonText ?? AbortButtonText
+				ConfirmButtonText = confirmButtonText ?? ConfirmButtonText,
+				CancelButtonText = abortButtonText ?? CancelButtonText
 			};
 	}
 }

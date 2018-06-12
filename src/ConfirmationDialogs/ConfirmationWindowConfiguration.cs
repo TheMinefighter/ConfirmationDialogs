@@ -1,8 +1,11 @@
 ﻿using System.Windows.Media;
-using Functional.Option;
+//using Functional.Option;
 using JetBrains.Annotations;
 
 namespace ConfirmationDialogs {
+	/// <summary>
+	/// A configuration defining the behaviour of a confirmation window
+	/// </summary>
 	public class ConfirmationWindowConfiguration {
 //		[NotNull]
 //		internal static ConfirmationWindowConfiguration NormalWindowConfiguration = new ConfirmationWindowConfiguration();

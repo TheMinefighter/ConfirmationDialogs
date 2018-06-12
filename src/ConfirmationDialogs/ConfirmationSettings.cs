@@ -1,12 +1,15 @@
 ﻿using System.Windows.Input;
 using System.Windows.Media;
-using Functional.Option;
+//using Functional.Option;
 using JetBrains.Annotations;
 
 namespace ConfirmationDialogs {
+	/// <summary>
+	/// Contains all settings for this library, and defines the default behaviours of confirmation dialogs
+	/// </summary>
 	public static class ConfirmationSettings {
 		/// <summary>
-		/// 
+		/// The <see cref="SkipConfirmationConfiguration"/> used by default
 		/// </summary>
 		[NotNull]
 		public static SkipConfirmationConfiguration SkipConfiguration {
@@ -15,7 +18,7 @@ namespace ConfirmationDialogs {
 		}
 
 		/// <summary>
-		/// 
+		/// The <see cref="ConfirmationWindowConfiguration"/> used by default
 		/// </summary>
 		[NotNull]
 		public static ConfirmationWindowConfiguration WindowConfiguration {
@@ -133,16 +136,16 @@ namespace ConfirmationDialogs {
 		}
 
 		/// <summary>
-		/// 
+		/// Changes certain parts of the default <see cref="ConfirmationWindowConfiguration"/>
 		/// </summary>
-		/// <param name="descriptionText"></param>
-		/// <param name="title"></param>
-		/// <param name="confirmByRetyping"></param>
-		/// <param name="confirmationText"></param>
-		/// <param name="confirmButtonText"></param>
-		/// <param name="abortButtonText"></param>
-		/// <param name="icon"></param>
-		public static void SetDefaultWindowConfiguration(string descriptionText = null,
+		/// <param name="descriptionText">The warning text to display, <see langword="null"/> for not changing it</param>
+		/// <param name="title">The content of the title bar of the confirmation window, <see langword="null"/> for not changing it</param>
+		/// <param name="confirmByRetyping">Whether the user has to retype a phrase, <see langword="null"/> for not changing it</param>
+		/// <param name="confirmationText">The text the user has to type to confirm the Action, <see langword="null"/> for not changing itt</param>
+		/// <param name="confirmButtonText">The text to display on the continue button, <see langword="null"/> for not changing it</param>
+		/// <param name="abortButtonText">The text to display on the cancel button, <see langword="null"/> for not changing it</param>
+
+		public static void SetDefaultWindowConfiguration(string descriptionText = null,//	/// <param name="icon"></param>
 			string title = null, bool? confirmByRetyping = null, string confirmationText = null,
 			string confirmButtonText = null, string abortButtonText = null) {//Option<ImageSource> icon = default(Option<ImageSource>),
 			Confirmation.WindowConfiguration =
@@ -154,14 +157,14 @@ namespace ConfirmationDialogs {
 		}
 
 		/// <summary>
-		/// 
+		/// Changes certain parts of the default <see cref="SkipConfirmationConfiguration"/>
 		/// </summary>
-		/// <param name="shift"></param>
-		/// <param name="alt"></param>
-		/// <param name="control"></param>
-		/// <param name="windows"></param>
-		/// <param name="allowSkip"></param>
-		/// <param name="skipAlways"></param>
+		/// <param name="shift">The <see cref="ModifierRequirement"/> for pressing the <see cref="ModifierKeys.Shift"/> key, <see langword="null"/> for not changing it</param>
+		/// <param name="alt">The <see cref="ModifierRequirement"/> for pressing the <see cref="ModifierKeys.Alt"/> key, <see langword="null"/> for not changing it</param>
+		/// <param name="control">The <see cref="ModifierRequirement"/> for pressing the <see cref="ModifierKeys.Control"/> key, <see langword="null"/> for not changing it</param>
+		/// <param name="windows">The <see cref="ModifierRequirement"/> for pressing the <see cref="ModifierKeys.Windows"/> key, <see langword="null"/> for not changing it</param>
+		/// <param name="allowSkip">Whether to allow skipping confirmation dialogs at all (overriden by <see cref="skipAlways"/>), <see langword="null"/> for not changing it</param>
+		/// <param name="skipAlways">Whether to skip all confirmation dialog (overrides <see cref="allowSkip"/> if true), <see langword="null"/> for not changing it</param>
 		public static void SetDefaultSkipConfiguration(ModifierRequirement? shift = null, ModifierRequirement? alt = null,
 			ModifierRequirement? control = null, ModifierRequirement? windows = null,
 			bool? allowSkip = null, bool? skipAlways = null) {

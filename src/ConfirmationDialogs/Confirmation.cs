@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Windows.Input;
 using System.Windows.Media;
-using Functional.Option;
+//using Functional.Option;
 
 namespace ConfirmationDialogs {
+	/// <summary>
+	/// A <see langword="class"/> providing dialogs, for the user to confirm actions
+	/// </summary>
 	public static class Confirmation {
 		internal static SkipConfirmationConfiguration SkipConfiguration = SkipConfirmationConfiguration.Presets.ShiftForSKip;
 		internal static ConfirmationWindowConfiguration WindowConfiguration = new ConfirmationWindowConfiguration();
@@ -53,7 +56,7 @@ namespace ConfirmationDialogs {
 		/// </summary>
 		/// <param name="windowOverride">The <see cref="ConfirmationWindowConfiguration"/> to use instead of the default</param>
 		/// <param name="skipOverride">The <see cref="SkipConfirmationConfiguration"/> to use instead of the default</param>
-		/// <returns></returns>
+		/// <returns>Whther the user confirmed that he is is willing to continue</returns>
 		public static bool
 			// ReSharper disable once MethodOverloadWithOptionalParameter
 			Confirm(ConfirmationWindowConfiguration windowOverride = null, SkipConfirmationConfiguration skipOverride = null) =>
@@ -62,14 +65,14 @@ namespace ConfirmationDialogs {
 		/// <summary>
 		///  Starts a simple confirmation dialog
 		/// </summary>
-		/// <param name="descripionText">The warning text to Display, <see langword="null"/> for default</param>
+		/// <param name="descripionText">The warning text to display, <see langword="null"/> for default</param>
 		/// <param name="title">The content of the title bar of the confirmation window, <see langword="null"/> for default</param>
 		/// <param name="confirmByRetyping">Whether the user has to retype a phrase, <see langword="null"/> for default</param>
 		/// <param name="confirmationText">The text the user has to type to confirm the Action, <see langword="null"/> for default</param>
 		/// <param name="confirmButtonText">The text to display on the continue button, <see langword="null"/> for default</param>
 		/// <param name="cancelButtonText">The text to display on the cancel button, <see langword="null"/> for default</param>
 
-		/// <returns>Whether the user confirmed the action</returns>
+		/// <returns>Whther the user confirmed that he is is willing to continue</returns>
 		// ReSharper disable once MethodOverloadWithOptionalParameter
 		/*		/// <param name="icon">The Icon of the window, use Option.None for default and <see cref="Option"/>&lt;<see cref="ImageSource"/>&gt;.<see cref="Option.Some"/>(<see langword="null"/>) to override it not to change the icon </param> */
 		public static bool Confirm(string descripionText = null, string title = null, bool? confirmByRetyping = null, string confirmationText = null,
@@ -104,6 +107,10 @@ namespace ConfirmationDialogs {
 //				return window.Tag is ConfirmationTag b && b.Confirmed;
 //			}
 //		}
+		/// <summary>
+		/// Starts a basic confirmation dialog
+		/// </summary>
+		/// <returns>Whther the user confirmed that he is is willing to continue</returns>
 		public static bool Confirm() => ShouldSkip(SkipConfiguration) || WindowConfiguration.Confirm();
 	}
 }

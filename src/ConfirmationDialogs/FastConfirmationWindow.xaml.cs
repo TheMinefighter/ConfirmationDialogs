@@ -1,10 +1,11 @@
 ﻿using System.Windows;
 
 namespace ConfirmationDialogs {
+	/// <inheritdoc cref="Window" />
 	/// <summary>
 	///  Interaction logic for FastConfirmationWindow.xaml
 	/// </summary>
-	internal partial class FastConfirmationWindow : Window {
+	internal partial class FastConfirmationWindow {
 		internal FastConfirmationWindow(ConfirmationTag tag) {
 			InitializeComponent();
 			Tag = tag;

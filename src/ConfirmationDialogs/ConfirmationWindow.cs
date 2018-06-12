@@ -5,7 +5,7 @@ namespace ConfirmationDialogs {
 	/// <summary>
 	///  Interaction logic for ConfirmationWindow.xaml
 	/// </summary>
-	internal partial class ConfirmationWindow : Window {
+	internal partial class ConfirmationWindow {
 		internal static float FontSizeMultiplier =
 			(float) (SystemFonts.MessageFontSize * 1.333333333333333333333333333333333333333333333333333333333333333333333333333);
 

@@ -23,6 +23,11 @@ namespace ConfirmationDialogs {
 		[NotNull]
 		public string CancelButton { get; set; }
 
+		// ReSharper disable once NotNullMemberIsNotInitialized
+		// Only done internal
+		internal ConfirmationTag() {
+			
+		}
 		//		public ConfirmationTag(string text = null, string confirmation = null, string continueButton = null, string cancelButton = null) {
 //			CancelButton = cancelButton ?? ConfirmationStrings.DefaultCancelButton;
 //			ContinueButton = continueButton ?? ConfirmationStrings.DefaultContinueButton;

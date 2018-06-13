@@ -1,10 +1,9 @@
-﻿using System.Windows.Media;
+﻿using JetBrains.Annotations;
 //using Functional.Option;
-using JetBrains.Annotations;
 
 namespace ConfirmationDialogs {
 	/// <summary>
-	/// A configuration defining the behaviour of a confirmation window
+	///  A configuration defining the behaviour of a confirmation window
 	/// </summary>
 	public class ConfirmationWindowConfiguration {
 //		[NotNull]
@@ -23,15 +22,15 @@ namespace ConfirmationDialogs {
 		public string ConfirmationText;
 
 		/// <summary>
-		///  Whether to use
-		/// </summary>
-		public bool ConfirmByRetyping;
-
-		/// <summary>
 		///  The Text displayed on the confirm button
 		/// </summary>
 		[NotNull]
 		public string ConfirmButtonText;
+
+		/// <summary>
+		///  Whether to use
+		/// </summary>
+		public bool ConfirmByRetyping;
 
 		/// <summary>
 		///  The text describing why the action might be dangerous
@@ -56,7 +55,7 @@ namespace ConfirmationDialogs {
 			Confirmation = ConfirmationText,
 			ContinueButton = ConfirmButtonText,
 			DescriptionText = DescriptionText,
-		//	Icon = Icon,
+			//	Icon = Icon,
 			Title = Title
 		};
 
@@ -93,13 +92,13 @@ namespace ConfirmationDialogs {
 		internal ConfirmationWindowConfiguration CreateFromDefaults(string descriptionText,
 			string title, bool? confirmByRetyping, string confirmationText, string confirmButtonText, string abortButtonText
 			//,Option<ImageSource> icon
-			) =>
+		) =>
 			new ConfirmationWindowConfiguration(true) {
 				ConfirmByRetyping = confirmByRetyping ?? ConfirmByRetyping,
 				Title = title ?? Title,
 				ConfirmationText = confirmationText ?? ConfirmationText,
 				DescriptionText = descriptionText ?? DescriptionText,
-			//	Icon = icon.ValueOr(Icon),
+				//	Icon = icon.ValueOr(Icon),
 				ConfirmButtonText = confirmButtonText ?? ConfirmButtonText,
 				CancelButtonText = abortButtonText ?? CancelButtonText
 			};

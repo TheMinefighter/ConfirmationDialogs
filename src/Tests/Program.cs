@@ -4,7 +4,6 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using ConfirmationDialogs;
-using Functional.Option;
 
 namespace Tests {
 	internal class Program {
@@ -40,8 +39,8 @@ namespace Tests {
 		}
 
 		private static void EmptyTest() {
-		//	Option<ImageSource>.Some((DBNull) DBNull.Value);
-		Confirmation.Confirm();
+			//	Option<ImageSource>.Some((DBNull) DBNull.Value);
+			Confirmation.Confirm();
 		}
 	}
 }

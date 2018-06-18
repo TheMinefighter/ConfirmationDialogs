@@ -9,11 +9,11 @@ namespace ConfirmationDialogs {
 		private T _value;
 
 		/// <summary>
-		/// 
+		/// Creates a new <see cref="OptionalContent{T}"/> from a given value
 		/// </summary>
-		/// <param name="nl"></param>
-		/// <returns></returns>
-		public static implicit operator OptionalContent<T>(T nl) => new OptionalContent<T> {_value = nl};
+		/// <param name="val">The value to use for the container</param>
+		/// <returns>The new Container containing the given value</returns>
+		public static implicit operator OptionalContent<T>(T val) => new OptionalContent<T> {_value = val};
 
 		/// <summary>
 		/// Creates a new <see cref="OptionalContent{T}"/> with the explicit value <see langword="null"/>

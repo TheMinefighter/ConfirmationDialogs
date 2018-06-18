@@ -69,7 +69,7 @@ namespace ConfirmationDialogs {
 		/// </summary>
 		/// <param name="descripionText">The warning text to display, <see langword="null" /> for default</param>
 		/// <param name="title">The content of the title bar of the confirmation window, <see langword="null" /> for default</param>
-		/// <param name="confirmByRetyping">Whether the user has to retype a phrase, <see langword="null" /> for default</param>
+		/// <param name="confirmByRetyping">Whether the user has to retype a given phrase to confirm the action, recommended for really dangerous actions, <see langword="null" /> for default</param>
 		/// <param name="confirmationText">The text the user has to type to confirm the Action, <see langword="null" /> for default</param>
 		/// <param name="confirmButtonText">The text to display on the continue button, <see langword="null" /> for default</param>
 		/// <param name="cancelButtonText">The text to display on the cancel button, <see langword="null" /> for default</param>

@@ -26,7 +26,7 @@ namespace ConfirmationDialogs {
 		public string ConfirmButtonText;
 
 		/// <summary>
-		///  Whether to use
+		///  Whether the user has to retype a given phrase to confirm the action, recommended for really dangerous actions
 		/// </summary>
 		public bool ConfirmByRetyping;
 

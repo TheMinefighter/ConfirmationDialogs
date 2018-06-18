@@ -32,10 +32,10 @@ namespace Tests {
 
 			writableBitmap.WritePixels(r, sourceBuffer, stride, 0);
 			ConfirmationSettings.ConfirmByRetyping = true;
-//			Console.WriteLine(Confirmation.Confirm(
-//				confirmByRetyping:
-//				false,
-//				icon: writableBitmap /*"dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh dfghjogtftfzu utfzzfzigfozigfo zgfghzghhggh "*/));
+			Console.WriteLine(Confirmation.Confirm(
+				confirmByRetyping:
+				false,
+				icon: writableBitmap));
 		}
 
 		private static void EmptyTest() {

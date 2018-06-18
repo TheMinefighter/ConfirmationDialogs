@@ -10,10 +10,10 @@
 		<projectUrl>https://theminefighter.github.io/ConfirmationDialogs/</projectUrl>
 		<requireLicenseAcceptance>true</requireLicenseAcceptance>
 		<description>Provides a simple interface for WPF-based confirmation dialogs, which can be skipped by pressing shift and are extensively
-			configureable. Targets .NET Framework 3.5 more information at theminefighter.github.io/ConfirmationDialogs/
+			configureable. Targets .NET Framework 3.5 more information at theminefighter.github.io/ConfirmationDialogs
 		</description>
 		<summary>Provides a simple interface for WPF Confirmation dialogs.</summary>
-		<releaseNotes>Improved documentation, support for custom Icons and SystemSounds planned / partially implemented</releaseNotes>
+		<releaseNotes>Improved documentation, support for custom Icons and SystemSounds implemented</releaseNotes>
 		<copyright>Copyright 2018 Tobias Brohl</copyright>
 		<tags>WPF Dialog Confirmation</tags>
 		<dependencies>

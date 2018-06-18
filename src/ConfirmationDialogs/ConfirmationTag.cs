@@ -7,25 +7,25 @@ namespace ConfirmationDialogs {
 		public bool Confirmed;
 
 		[NotNull]
-		public string Title;
+		internal string Title;
 
 		[NotNull]
-		public string DescriptionText;
+		internal string DescriptionText;
 
 		[CanBeNull]
-		public ImageSource Icon;
+		internal ImageSource Icon;
 
 		[NotNull]
-		public string Confirmation;
+		internal string Confirmation;
 
 		[NotNull]
-		public string ContinueButton;
+		internal string ContinueButton;
 
 		[NotNull]
-		public string CancelButton;
+		internal string CancelButton;
 
 		[CanBeNull]
-		public SystemSound Sound;
+		internal SystemSound Sound;
 
 		// ReSharper disable once NotNullMemberIsNotInitialized
 		// Only done internal

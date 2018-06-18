@@ -90,7 +90,7 @@ namespace ConfirmationDialogs {
 		}
 
 		/// <summary>
-		/// The <see cref="SystemSound"/> to play, when the confirmation dialog pops up, <see langword="null"/> for none
+		/// The <see cref="SystemSound" /> to play, use <see langword="null" /> for no sound, possible values are obtainable in the <see cref="SystemSounds" /> <see langword="class" />
 		/// </summary>
 		[CanBeNull]
 		public static SystemSound Sound {
@@ -155,8 +155,8 @@ namespace ConfirmationDialogs {
 		/// <param name="confirmationText">The text the user has to type to confirm the Action, <see langword="null" /> for not changing itt</param>
 		/// <param name="confirmButtonText">The text to display on the continue button, <see langword="null" /> for not changing it</param>
 		/// <param name="abortButtonText">The text to display on the cancel button, <see langword="null" /> for not changing it</param>
-		/// <param name="icon"></param>
-		/// <param name="sound"></param>
+		/// <param name="icon">The <see cref="ImageSource" /> providing the icon of the confirmation windows, use <see langword="null" /> for default icon</param>
+		/// <param name="sound">The <see cref="SystemSound" /> to play, use <see langword="null" /> for no sound, possible values are obtainable in the <see cref="SystemSounds" /> <see langword="class" /></param>
 		public static void SetDefaultWindowConfiguration(string descriptionText = null, //	/// <param name="icon"></param>
 			string title = null, bool? confirmByRetyping = null, string confirmationText = null,
 			string confirmButtonText = null, string abortButtonText = null,

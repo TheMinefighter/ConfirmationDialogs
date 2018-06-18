@@ -2,7 +2,6 @@
 using System.Windows.Input;
 using System.Windows.Media;
 using JetBrains.Annotations;
-//using Functional.Option;
 
 namespace ConfirmationDialogs {
 	/// <summary>
@@ -157,7 +156,7 @@ namespace ConfirmationDialogs {
 		/// <param name="abortButtonText">The text to display on the cancel button, <see langword="null" /> for not changing it</param>
 		/// <param name="icon">The <see cref="ImageSource" /> providing the icon of the confirmation windows, use <see langword="null" /> for default icon</param>
 		/// <param name="sound">The <see cref="SystemSound" /> to play, use <see langword="null" /> for no sound, possible values are obtainable in the <see cref="SystemSounds" /> <see langword="class" /></param>
-		public static void SetDefaultWindowConfiguration(string descriptionText = null, //	/// <param name="icon"></param>
+		public static void SetDefaultWindowConfiguration(string descriptionText = null, 
 			string title = null, bool? confirmByRetyping = null, string confirmationText = null,
 			string confirmButtonText = null, string abortButtonText = null,
 			OptionalContent<ImageSource> icon=null, OptionalContent<SystemSound> sound=null) {

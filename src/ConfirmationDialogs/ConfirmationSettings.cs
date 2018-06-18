@@ -80,7 +80,7 @@ namespace ConfirmationDialogs {
 		}
 
 		/// <summary>
-		/// The icon to display in the windows, <see langword="null"/> for not changing it
+		///  The icon to display in the windows, <see langword="null" /> for not changing it
 		/// </summary>
 		[CanBeNull]
 		public static ImageSource Icon {
@@ -89,14 +89,15 @@ namespace ConfirmationDialogs {
 		}
 
 		/// <summary>
-		/// The <see cref="SystemSound" /> to play, use <see langword="null" /> for no sound, possible values are obtainable in the <see cref="SystemSounds" /> <see langword="class" />
+		///  The <see cref="SystemSound" /> to play, use <see langword="null" /> for no sound, possible values are obtainable in the
+		///  <see cref="SystemSounds" /> <see langword="class" />
 		/// </summary>
 		[CanBeNull]
 		public static SystemSound Sound {
 			set => Confirmation.WindowConfiguration.Sound = value;
 			get => Confirmation.WindowConfiguration.Sound;
-		}	
-		
+		}
+
 		/// <summary>
 		///  Whether to skip all confirmation dialog (overrides <see cref="AllowSkip" /> if true)
 		/// </summary>
@@ -150,17 +151,25 @@ namespace ConfirmationDialogs {
 		/// </summary>
 		/// <param name="descriptionText">The warning text to display, <see langword="null" /> for not changing it</param>
 		/// <param name="title">The content of the title bar of the confirmation window, <see langword="null" /> for not changing it</param>
-		/// <param name="confirmByRetyping">Whether the user has to retype a given phrase to confirm the action, recommended for really dangerous actions <see langword="null" /> for not changing it</param>
+		/// <param name="confirmByRetyping">
+		///  Whether the user has to retype a given phrase to confirm the action, recommended for really dangerous
+		///  actions <see langword="null" /> for not changing it
+		/// </param>
 		/// <param name="confirmationText">The text the user has to type to confirm the Action, <see langword="null" /> for not changing itt</param>
 		/// <param name="confirmButtonText">The text to display on the continue button, <see langword="null" /> for not changing it</param>
 		/// <param name="abortButtonText">The text to display on the cancel button, <see langword="null" /> for not changing it</param>
-		/// <param name="icon">The <see cref="ImageSource" /> providing the icon of the confirmation windows, use <see langword="null" /> for default icon</param>
-		/// <param name="sound">The <see cref="SystemSound" /> to play, use <see langword="null" /> for no sound, possible values are obtainable in the <see cref="SystemSounds" /> <see langword="class" /></param>
-		public static void SetDefaultWindowConfiguration(string descriptionText = null, 
+		/// <param name="icon">
+		///  The <see cref="ImageSource" /> providing the icon of the confirmation windows, use <see langword="null" /> for default
+		///  icon
+		/// </param>
+		/// <param name="sound">
+		///  The <see cref="SystemSound" /> to play, use <see langword="null" /> for no sound, possible values are obtainable in the
+		///  <see cref="SystemSounds" /> <see langword="class" />
+		/// </param>
+		public static void SetDefaultWindowConfiguration(string descriptionText = null,
 			string title = null, bool? confirmByRetyping = null, string confirmationText = null,
 			string confirmButtonText = null, string abortButtonText = null,
-			OptionalContent<ImageSource> icon=null, OptionalContent<SystemSound> sound=null) {
-			
+			OptionalContent<ImageSource> icon = null, OptionalContent<SystemSound> sound = null) {
 			Confirmation.WindowConfiguration =
 				Confirmation.WindowConfiguration.CreateFromDefaults(descriptionText,
 					title,

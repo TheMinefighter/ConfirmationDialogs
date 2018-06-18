@@ -39,7 +39,6 @@ namespace Tests {
 		}
 
 		private static void EmptyTest() {
-			//	Option<ImageSource>.Some((DBNull) DBNull.Value);
 			Confirmation.Confirm();
 		}
 	}

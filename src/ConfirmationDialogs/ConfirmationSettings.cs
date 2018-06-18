@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System.Media;
+using System.Windows.Input;
+using System.Windows.Media;
 using JetBrains.Annotations;
 //using Functional.Option;
 
@@ -78,15 +80,24 @@ namespace ConfirmationDialogs {
 			get => Confirmation.WindowConfiguration.ConfirmButtonText;
 		}
 
-//		/// <summary>
-//		/// The icon to display in the windows, <see langword="null"/> for not changing it
-//		/// </summary>
-//		[CanBeNull]
-//		public static ImageSource Icon {
-//			set => Confirmation.WindowConfiguration.Icon = value;
-//			get => Confirmation.WindowConfiguration.Icon;
-//		}
+		/// <summary>
+		/// The icon to display in the windows, <see langword="null"/> for not changing it
+		/// </summary>
+		[CanBeNull]
+		public static ImageSource Icon {
+			set => Confirmation.WindowConfiguration.Icon = value;
+			get => Confirmation.WindowConfiguration.Icon;
+		}
 
+		/// <summary>
+		/// The <see cref="SystemSound"/> to play, when the confirmation dialog pops up, <see langword="null"/> for none
+		/// </summary>
+		[CanBeNull]
+		public static SystemSound Sound {
+			set => Confirmation.WindowConfiguration.Sound = value;
+			get => Confirmation.WindowConfiguration.Sound;
+		}	
+		
 		/// <summary>
 		///  Whether to skip all confirmation dialog (overrides <see cref="AllowSkip" /> if true)
 		/// </summary>
@@ -144,15 +155,18 @@ namespace ConfirmationDialogs {
 		/// <param name="confirmationText">The text the user has to type to confirm the Action, <see langword="null" /> for not changing itt</param>
 		/// <param name="confirmButtonText">The text to display on the continue button, <see langword="null" /> for not changing it</param>
 		/// <param name="abortButtonText">The text to display on the cancel button, <see langword="null" /> for not changing it</param>
+		/// <param name="icon"></param>
+		/// <param name="sound"></param>
 		public static void SetDefaultWindowConfiguration(string descriptionText = null, //	/// <param name="icon"></param>
 			string title = null, bool? confirmByRetyping = null, string confirmationText = null,
-			string confirmButtonText = null, string abortButtonText = null) {
-			//Option<ImageSource> icon = default(Option<ImageSource>),
+			string confirmButtonText = null, string abortButtonText = null,
+			OptionalContent<ImageSource> icon=null, OptionalContent<SystemSound> sound=null) {
+			
 			Confirmation.WindowConfiguration =
 				Confirmation.WindowConfiguration.CreateFromDefaults(descriptionText,
 					title,
 					confirmByRetyping, confirmationText, confirmationText, abortButtonText
-					//, icon
+					, icon, sound
 				);
 		}
 

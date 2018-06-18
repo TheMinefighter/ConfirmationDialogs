@@ -1,4 +1,5 @@
-﻿using System.Windows.Media;
+﻿using System.Media;
+using System.Windows.Media;
 using JetBrains.Annotations;
 
 namespace ConfirmationDialogs {
@@ -6,22 +7,25 @@ namespace ConfirmationDialogs {
 		public bool Confirmed;
 
 		[NotNull]
-		public string Title { get; set; }
+		public string Title;
 
 		[NotNull]
-		public string DescriptionText { get; set; }
+		public string DescriptionText;
 
 		[CanBeNull]
-		public ImageSource Icon { get; set; }
+		public ImageSource Icon;
 
 		[NotNull]
-		public string Confirmation { get; set; }
+		public string Confirmation;
 
 		[NotNull]
-		public string ContinueButton { get; set; }
+		public string ContinueButton;
 
 		[NotNull]
-		public string CancelButton { get; set; }
+		public string CancelButton;
+
+		[CanBeNull]
+		public SystemSound Sound;
 
 		// ReSharper disable once NotNullMemberIsNotInitialized
 		// Only done internal

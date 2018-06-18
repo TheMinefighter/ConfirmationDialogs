@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace ConfirmationDialogs {
-	internal class OptionalContent<T> where T : class {
+	public class OptionalContent<T> where T : class {
 		private T _value;
 
 		public static implicit operator OptionalContent<T>(T nl) => new OptionalContent<T> {_value = nl};

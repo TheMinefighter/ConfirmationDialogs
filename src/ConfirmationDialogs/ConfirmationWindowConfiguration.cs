@@ -1,14 +1,12 @@
-﻿using JetBrains.Annotations;
-//using Functional.Option;
+﻿using System.Media;
+using System.Windows.Media;
+using JetBrains.Annotations;
 
 namespace ConfirmationDialogs {
 	/// <summary>
 	///  A configuration defining the behaviour of a confirmation window
 	/// </summary>
 	public class ConfirmationWindowConfiguration {
-//		[NotNull]
-//		internal static ConfirmationWindowConfiguration NormalWindowConfiguration = new ConfirmationWindowConfiguration();
-
 		/// <summary>
 		///  The Text displayed on the abort button
 		/// </summary>
@@ -38,11 +36,20 @@ namespace ConfirmationDialogs {
 		[NotNull]
 		public string DescriptionText;
 
-//		/// <summary>
-//		///  The <see cref="ImageSource" /> providing the icon of the confirmation windows, use <see langword="null" /> for default icon
-//		/// </summary>
-//		[CanBeNull]
-//		public ImageSource Icon;
+		/// <summary>
+		///  The <see cref="ImageSource" /> providing the icon of the confirmation windows,
+		///  use <see langword="null" /> for default icon
+		/// </summary>
+		[CanBeNull]
+		public ImageSource Icon;
+
+		/// <summary>
+		///  The <see cref="SystemSound" /> to play, use <see langword="null" /> for no sound,
+		///  possible values are obtainable in the <see cref="SystemSounds" /> <see langword="class" />
+		/// </summary>
+		[CanBeNull]
+		public SystemSound Sound;
+
 
 		/// <summary>
 		///  The Window title
@@ -55,8 +62,9 @@ namespace ConfirmationDialogs {
 			Confirmation = ConfirmationText,
 			ContinueButton = ConfirmButtonText,
 			DescriptionText = DescriptionText,
-			//	Icon = Icon,
-			Title = Title
+			Icon = Icon,
+			Title = Title,
+			Sound = Sound
 		};
 
 		/// <summary>
@@ -69,6 +77,8 @@ namespace ConfirmationDialogs {
 			DescriptionText = ConfirmationStrings.DefaultDescriptionText;
 			ConfirmButtonText = ConfirmationStrings.DefaultContinueButtonText;
 			CancelButtonText = ConfirmationStrings.DefaultCancelButton;
+			Icon = null;
+			Sound = SystemSounds.Asterisk;
 		}
 
 //Why is there no hiding in C#?
@@ -77,30 +87,35 @@ namespace ConfirmationDialogs {
 		private ConfirmationWindowConfiguration(bool empty) { }
 
 		internal bool Confirm() {
+			ConfirmationTag confirmationTag = Tag;
+			confirmationTag.Sound?.Play();
+
 			if (ConfirmByRetyping) {
-				ConfirmationWindow window = new ConfirmationWindow(Tag);
+				ConfirmationWindow window = new ConfirmationWindow(confirmationTag);
 				window.ShowDialog();
 				return window.Tag is ConfirmationTag b && b.Confirmed;
 			}
 			else {
-				FastConfirmationWindow window = new FastConfirmationWindow(Tag);
+				FastConfirmationWindow window = new FastConfirmationWindow(confirmationTag);
 				window.ShowDialog();
 				return window.Tag is ConfirmationTag b && b.Confirmed;
 			}
 		}
 
 		internal ConfirmationWindowConfiguration CreateFromDefaults(string descriptionText,
-			string title, bool? confirmByRetyping, string confirmationText, string confirmButtonText, string abortButtonText
-			//,Option<ImageSource> icon
+			string title, bool? confirmByRetyping, string confirmationText, string confirmButtonText,
+			string abortButtonText
+			, OptionalContent<ImageSource> icon, OptionalContent<SystemSound> sound
 		) =>
 			new ConfirmationWindowConfiguration(true) {
 				ConfirmByRetyping = confirmByRetyping ?? ConfirmByRetyping,
 				Title = title ?? Title,
 				ConfirmationText = confirmationText ?? ConfirmationText,
 				DescriptionText = descriptionText ?? DescriptionText,
-				//	Icon = icon.ValueOr(Icon),
 				ConfirmButtonText = confirmButtonText ?? ConfirmButtonText,
-				CancelButtonText = abortButtonText ?? CancelButtonText
+				CancelButtonText = abortButtonText ?? CancelButtonText,
+				Icon = icon??Icon,
+				Sound = sound??Sound
 			};
 	}
 }

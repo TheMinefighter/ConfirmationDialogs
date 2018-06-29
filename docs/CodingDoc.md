@@ -5,9 +5,11 @@ For all of the following samples you will have to add `using ConfirmationDialogs
 So let's just ask the user for a simple Confirmation:
 
 ```
+{% highlight c# %}
 if (Confirmation.Confirm()) {
 	//Executed only if the user confirmed that he is willing to continue
 	}
+{% endhighlight %}
 ```
 
 Or we could change the warning displayed:

@@ -4,23 +4,21 @@ For all of the following samples you will have to add `using ConfirmationDialogs
 
 So let's just ask the user for a simple Confirmation:
 
-```
-{% highlight c# %}
+```c#
 if (Confirmation.Confirm()) {
 	//Executed only if the user confirmed that he is willing to continue
 	}
-{% endhighlight %}
 ```
 
 Or we could change the warning displayed:
 
-```
+```c#
 Confirmation.Confirm("This is a test warning");
 ```
 
 When we want the user to retype a phrase ("CONFIRM" by default) we can do it by the following:
 
-```
+```c#
 Confirmation.Confirm(confirmByRetyping: true);
 ```
 
@@ -29,19 +27,19 @@ As you might have noticed you can skip any confirmation dialog by pressing the s
 # Skipping
 If you want to skip all confirmation dialogs, e.g. because the user has disabled them, you can just write:
 
-```
+```c#
 ConfirmationSettings.SkipConfiguration=SkipConfirmationConfiguration.Presets.SkipAlways;
 ```
 
 Or you can disable the skip functionality at all:
 
-```
+```c#
 ConfirmationSettings.SkipConfiguration=SkipConfirmationConfiguration.Presets.NeverSkip;
 ```
 
 Or to return back to default:
 
-```
+```c#
 ConfirmationSettings.SkipConfiguration=SkipConfirmationConfiguration.Presets.ShiftForSkip;
 ```
 
@@ -68,19 +66,19 @@ For skipping there are additionally the following two settings:
 There are multiple ways of editing these settings.
 To edit a single setting run e.g.:
 
-```
+```c#
 ConfirmationSettings.Control = ModifierRequirement.Required
 ```
 
 To change multiple values you can run:
 
-```
+```c#
 ConfirmationSettings.SetDefaultSkipConfiguration(shift: ModifierRequirement.Ignored, control: ModifierRequirement.Required);
 ```
 
 If you want to replace the configuration completely just run:
 
-```
+```c#
 ConfirmationSettings.SkipConfirmationConfiguration = 
 	new SkipConfirmationConfiguration{
 		AllowSkip = true,

@@ -2,10 +2,10 @@
 
 ## How to use
 For a simple confirmation run
-```
+```c#
 Confirmation.Confirm();
 ```
-That will return a `Boolean`.
+That will return a `bool`.
 Forthe full documentation go [here](./CodingDoc.html).
 ## Download
 Download this package in your NuGet Client or [here](https://www.nuget.org/packages/ConfirmationDialogs)

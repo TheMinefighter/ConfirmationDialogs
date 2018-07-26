@@ -9,7 +9,8 @@ namespace Tests {
 	internal class Program {
 		[STAThread]
 		public static void Main(string[] args) {
-			ImageTest();
+			Console.WriteLine(Confirmation.Confirm("zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg zghhklgggg uzfgkkkkkkkkkkkkkk ghlkkkkkkk sdafaaaaaaaaaa dsfsfsdfsf gfdgdfgdg ",confirmByRetyping: false));
+//			ImageTest();
 			Console.Read();
 		}
 

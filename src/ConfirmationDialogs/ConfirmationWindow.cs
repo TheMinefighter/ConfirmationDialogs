@@ -42,7 +42,7 @@ namespace ConfirmationDialogs {
 			}
 
 			Title = confirmationTag.Title;
-			Height = DescriptionTb.LineCount * FontSizeMultiplier + 123;
+			Height = DescriptionTb.LineCount * FontSizeMultiplier + 133;
 		}
 	}
 }

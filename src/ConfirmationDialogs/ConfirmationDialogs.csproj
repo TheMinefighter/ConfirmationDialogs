@@ -78,7 +78,9 @@
     <Content Include="docs\CodingDoc.md" />
     <Content Include="docs\_layouts\default.html" />
     <Content Include="docs\_sass\jekyll-theme-leap-day.scss" />
-    <None Include="ConfirmationDialog.csproj.nuspec" />
+    <None Include="ConfirmationDialog.csproj.nuspec">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="docs/index.md" />
     <EmbeddedResource Include="ConfirmationStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>

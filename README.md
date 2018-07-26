@@ -1,2 +1,2 @@
 # ConfirmationDialogs
-This thing provides Confirmation dialogs, and will shortly (a few hours) be available over at nuget.org 
+This packaged provides highly customizeable Confirmation dialogs. For further information and Documentation visit https://theminefighter.github.io/ConfirmationDialogs/ .

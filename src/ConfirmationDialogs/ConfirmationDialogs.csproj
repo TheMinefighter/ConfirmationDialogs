@@ -74,7 +74,6 @@
     <Content Include="ConfirmationDialog.csproj" />
     <Content Include="docs\Acknowledgements.md" />
     <Content Include="docs\assets\css\fonts.scss" />
-    <Content Include="docs\assets\css\style.scss" />
     <Content Include="docs\CodingDoc.md" />
     <Content Include="docs\_layouts\default.html" />
     <Content Include="docs\_sass\jekyll-theme-leap-day.scss" />
